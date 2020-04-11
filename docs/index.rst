@@ -6,13 +6,6 @@ Welcome to PRJ's documentation!
 .. toctree::
    :maxdepth: 2
 
-   modules
+   graph
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -1,7 +1,10 @@
-graph module
+Graph module
 ============
 
-.. automodule:: src.graph
+The ``Graph`` class
+*****************************
+
+.. autoclass:: src.graph.Graph
    :members:
    :undoc-members:
    :show-inheritance:
