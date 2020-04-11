@@ -1,5 +1,5 @@
-independent\_cascade module
-===========================
+Independent Cascade module
+**************************
 
 .. automodule:: src.independent_cascade
    :members:

@@ -1,9 +1,8 @@
 Graph module
-============
-
-The ``Graph`` class
 *****************************
 
+The ``Graph`` class
+-------------------
 .. autoclass:: src.graph.Graph
    :members:
    :undoc-members:

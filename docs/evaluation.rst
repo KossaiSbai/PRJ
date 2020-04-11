@@ -1,5 +1,5 @@
-evaluation module
-=================
+Evaluation module
+*****************
 
 .. automodule:: src.evaluation
    :members:
