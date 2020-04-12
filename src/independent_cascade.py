@@ -23,10 +23,24 @@ class IndependentCascadeModel:
         self.total_number_of_nodes = 0
         self.all_influenced_nodes, self.total_number_of_nodes = self.cascade(g, seeds, act_prob)
 
-    def get_influenced_nodes(self):
+    def get_influenced_nodes(self) -> List[List[str]]:
+        """Returns a list of all the influenced nodes after carrying out the diffusion process.
+
+        Returns
+        -------
+        List[List[str]]
+            list of influenced nodes.
+        """
         return self.all_influenced_nodes
 
-    def get_total_number_of_influenced_nodes(self):
+    def get_total_number_of_influenced_nodes(self) -> int:
+        """Returns the total number of influenced nodes after carrying out the diffusion process.
+
+        Returns
+        -------
+        int
+            number of influenced nodes
+        """
         return self.total_number_of_nodes
 
     @staticmethod
