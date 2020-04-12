@@ -84,16 +84,18 @@ class Graph:
             The adjacency list of `self`.
         """
         for x in lines:
+            # Splits the line by whitespace and gets the two nodes of the edge.
             end_nodes = x.split(" ")
             from_node = end_nodes[0]
             to_node = end_nodes[1]
+            # Skips if the two nodes are the same: avoid self loops.
             if from_node == to_node:
                 continue
             if from_node not in self.adjacency_list.keys():
                 self.adjacency_list[from_node] = [to_node]
             else:
                 self.adjacency_list[from_node].append(to_node)
-
+            # If the tail node of the edge is not the adjacency list then make its adjacency list empty.
             if to_node not in self.adjacency_list.keys():
                 self.adjacency_list[to_node] = []
 
@@ -107,8 +109,10 @@ class Graph:
         path : str
             Path of the tgf file.
         """
+        # split() gets rid of tab characters.
         line_list = [' '.join(line.split()) for line in open(path, "r")]
         hashtag_index = line_list.index("#")
+        # Extracts the nodes part and the edges part separated by the # symbol.
         nodes_part = line_list[:hashtag_index]
         edges_part = line_list[hashtag_index+1:]
         self.adjacency_list = self.build_adjacency_list(edges_part)
@@ -194,6 +198,7 @@ class Graph:
             A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
         degrees_tuples = self.compute_degrees(degree_method, vertices)
+        # Sorts the list of tuples by degree (second element of the tuple) in reverse order, that is decreasing order.
         degrees_sorted = sorted(degrees_tuples, key=itemgetter(1), reverse=True)
         return degrees_sorted
 
@@ -309,6 +314,7 @@ class Graph:
         """
         neighbourhood_edges = 0
         for neighbour in neighbourhood:
+            # Derives the number of nodes that are both in neighbourhood and in the adjacency list associated to the node called neighbour.
             neighbourhood_edges += len(list(set(neighbourhood) & set(self.adjacency_list[neighbour])))
         return neighbourhood_edges
 
@@ -346,9 +352,11 @@ class Graph:
         float
             `NLC(vertex)`
         """
-        connected_graph_neighbours = self.neighbourhood(vertex)
-        connected_graph_neighbours.append(vertex)
-        degrees = self.sort_vertices_by_degree(degree_method,connected_graph_neighbours)
+        neighbours = self.neighbourhood(vertex)
+        neighbours.append(vertex)
+        degrees = self.sort_vertices_by_degree(degree_method,neighbours)
+        # Gets the biggest degree value in the neighbourhood.
+        # This corresponds to the second element (degree value) of the first tuple of the sorted list since it is sorted in decreasing order.
         most_connections = degrees[0][1]
         degree_centrality = sum([most_connections - degree[1] for degree in degrees])
         return degree_centrality
@@ -485,6 +493,8 @@ class Graph:
         List[Tuple[str,float]]
               A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
+        # The advanced metric takes the basic metric as parameter.
+        # For instance, EDC takes out-degree or in-degree as parameter.
         degrees_tuples = [(vertex, advanced_metric(basic_metric, vertex)) for vertex in vertices]
         degrees_sorted = sorted(degrees_tuples, key=itemgetter(1), reverse=True)
         return degrees_sorted
@@ -673,6 +683,7 @@ def write_nodes_to_txt_file(path: str, nodes: List[str]) -> None:
     nodes : List[str]
         List of nodes to be put in the txt file.
     """
+    # Reads the given file in write mode.
     with open(path, 'w') as output_file:
         for index, node in enumerate(nodes):
             output_file.write(node)
