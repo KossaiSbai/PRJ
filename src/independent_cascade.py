@@ -57,6 +57,7 @@ class IndependentCascadeModel:
         bool
             whether the generated random number is below `act_prob`.
         """
+        # Rounds the number to 1 number after the decimal point.
         random_number = round(random.random(), 1)
         return random_number <= act_prob
 
@@ -87,6 +88,9 @@ class IndependentCascadeModel:
         for s in seed_nodes:
             nbs = g.successors(s)
             for nb in nbs:
+                # Skips if one of the following happens:
+                # nb is a seed node
+                # the edge between s and nb has already been tried/explored before.
                 if nb in seed_nodes or (s, nb) in tried_edges or (s, nb) in tried_edges_of_this_round:
                     continue
                 if self.prop_success(act_prob):
@@ -116,6 +120,8 @@ class IndependentCascadeModel:
             List of lists of influenced nodes as well as the total number of influenced nodes.
         """
         tried_edges = set()
+        # Each sublist at index i stores the nodes influenced at round i.
+        # So initially, at round 0, the seed nodes are the only influenced nodes.
         layer_i_nodes = [[i for i in seed_nodes]]
         total_influenced_nodes = len(layer_i_nodes[0])
         while True:
@@ -125,6 +131,7 @@ class IndependentCascadeModel:
             layer_i_nodes.append(activated_nodes_of_this_round)
             total_influenced_nodes += len(activated_nodes_of_this_round)
             tried_edges = tried_edges.union(tried_edges_of_this_round)
+            # If no more nodes have been influenced at the round that has just happened, the process halts.
             if len(seed_nodes) == len_old:
                 break
         return layer_i_nodes,total_influenced_nodes
@@ -151,7 +158,6 @@ class IndependentCascadeModel:
             if s not in g.get_vertices():
                 raise Exception("seed", s, "is not in graph")
 
-        # init activation probabilities
         if act_prob > 1:
           raise Exception("edge activation probability cannot be larger than 1")
 

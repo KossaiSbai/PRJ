@@ -89,6 +89,7 @@ class LinearThresholdModel:
             for nb in nbs:
                 if nb in seed_nodes:
                     continue
+                # Extracts the predecessors of nb that are seed nodes.
                 active_nb = list(set(g.predecessors(all_vertices,nb)).intersection(set(seed_nodes)))
                 if self.compute_influence_sum(active_nb, influences) >= thresholds[nb]:
                     activated_nodes_of_this_round.add(nb)
@@ -118,13 +119,16 @@ class LinearThresholdModel:
         Tuple[List[List[str]], int]
             List of lists of influenced nodes as well as the total number of influenced nodes.
         """
-        layer_i_nodes = [[i for i in seed_nodes]] # Each sublist at index `i` corresponds to the influenced nodes of round `i`.
+        # Each sublist at index i stores the nodes influenced at round i.
+        # So initially, at round 0, the seed nodes are the only influenced nodes.
+        layer_i_nodes = [[i for i in seed_nodes]]
         total_influenced_nodes = len(layer_i_nodes[0])
         while True:
             len_old = len(seed_nodes)
             (seed_nodes, activated_nodes_of_this_round) = self.diffuse_one_round(g, seed_nodes, influences, thresholds)
             total_influenced_nodes += len(activated_nodes_of_this_round)
             layer_i_nodes.append(activated_nodes_of_this_round)
+            # If no more nodes have been influenced at the round that has just happened, the process halts.
             if len(seed_nodes) == len_old:
                 break
         return layer_i_nodes,total_influenced_nodes
@@ -150,6 +154,7 @@ class LinearThresholdModel:
             if s not in g.get_vertices():
                 raise Exception('seed', s, 'is not in graph')
 
+        # Initialises the influences and thresholds
         for n in g.get_vertices():
             ind = g.in_degree(n)
             influences[n] = 1 if ind == 0 else 1 / float(ind)
