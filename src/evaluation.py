@@ -7,7 +7,7 @@ def run_time_spreading_nodes_test(dataset_graph,k,n):
     total_elapsed = 0
     for i in range(n):
         print("Iteration", i)
-        sub = dataset_graph.return_full_subgraph(k, "o")
+        sub = dataset_graph.build_subgraph(k, "o")
         start = time.time()
         influential_nodes = sub.get_influential_nodes(sub.out_degree)
         elapsed = time.time() - start
@@ -20,7 +20,7 @@ def run_influential_nodes_test(dataset_graph,k,n):
     cumulated_number_of_influential_nodes = 0
     for i in range(n):
         print("Iteration", i)
-        sub = dataset_graph.return_full_subgraph(k,"i")
+        sub = dataset_graph.build_subgraph(k, "i")
         influential_nodes = sub.get_influential_nodes(sub.in_degree)
         cumulated_number_of_influential_nodes += len(influential_nodes)
         print(len(influential_nodes))
@@ -33,7 +33,7 @@ def run_spreading_nodes_test(dataset_graph,k,n,models_compared):
         average_spreadings.append([])
     for i in range(n):
         print("Iteration", i)
-        sub = dataset_graph.return_full_subgraph(k,"o")
+        sub = dataset_graph.build_subgraph(k, "o")
         print(len(sub.nodes))
         print(len(sub.edges))
         influential_nodes = sub.get_influential_nodes(sub.out_degree)

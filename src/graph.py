@@ -5,7 +5,6 @@ import random
 import src.linear_threshold as lt
 from typing import List,Callable,Tuple,Dict
 
-
 class Graph:
 
     """Conceptual class representing a graph data structure
@@ -26,12 +25,12 @@ class Graph:
         self.adjacency_list = {}
         self.nodes = []
         if path != "":
-            self.process_tgf_file(path) if file_type(path) == "tgf" else self.process_txt_file(path)
+            self.process_tgf_file(path) if return_file_type(path) == "tgf" else self.process_txt_file(path)
         else:
             self.adjacency_list = al
             self.nodes = self.get_vertices()
         self.edges = self.get_edges()
-        self.most_connected_node = None
+        self.most_connected_node_degree_value = None
         self.degree_centralities = {}
 
     def get_edges(self) -> List[Tuple[str,str]]:
@@ -158,7 +157,7 @@ class Graph:
         """
         return len(self.adjacency_list[vertex])
 
-    def vertices_with_degree(self, degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str,int]]:
+    def compute_degrees(self, degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str, int]]:
         """ Computes and stores the degree values for each node, using the given degree metric.
 
         Parameters
@@ -193,11 +192,11 @@ class Graph:
         List[Tuple[str,int]]
             A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
-        degrees_tuples = self.vertices_with_degree(degree_method, vertices)
+        degrees_tuples = self.compute_degrees(degree_method, vertices)
         degrees_sorted = sorted(degrees_tuples, key=itemgetter(1), reverse=True)
         return degrees_sorted
 
-    def vertices_with_in_degree(self, vertices: List[str]) -> List[Tuple[str,int]]:
+    def compute_in_degrees(self, vertices: List[str]) -> List[Tuple[str, int]]:
         """ Computes and stores the in-degree values for each node.
 
         Parameters
@@ -210,7 +209,7 @@ class Graph:
         List[Tuple[str,int]]
             A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
-        return self.vertices_with_degree(self.in_degree, vertices)
+        return self.compute_degrees(self.in_degree, vertices)
 
     def sort_vertices_by_in_degree(self, vertices: List[str]) -> List[Tuple[str,int]]:
 
@@ -228,7 +227,7 @@ class Graph:
         """
         return self.sort_vertices_by_degree(self.in_degree, vertices)
 
-    def vertices_with_out_degree(self, vertices: List[str]) -> List[Tuple[str,int]]:
+    def compute_out_degrees(self, vertices: List[str]) -> List[Tuple[str, int]]:
         """ Computes and stores the out-degree values for each node.
 
         Parameters
@@ -241,7 +240,7 @@ class Graph:
         List[Tuple[str,int]]
             A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
-        return self.vertices_with_degree(self.out_degree, vertices)
+        return self.compute_degrees(self.out_degree, vertices)
 
     def sort_vertices_by_out_degree(self, vertices: List[str]) -> List[Tuple[str,int]]:
         """ Sorts the nodes by out-degree value.
@@ -258,7 +257,7 @@ class Graph:
         """
         return self.sort_vertices_by_degree(self.out_degree, vertices)
 
-    def select_k_most_vertices(self, degree_method:  Callable[[str], int], k: int) -> List[str]:
+    def select_vertices_with_k_biggest_degree_values(self, degree_method:  Callable[[str], int], k: int) -> List[str]:
         """ Retrieve case ID from file name.
 
         Parameters
@@ -353,7 +352,7 @@ class Graph:
         degree_centrality = sum([most_connections - degree[1] for degree in degrees])
         return degree_centrality
 
-    def mcn(self, degree_method: Callable[[str], int]) -> int:
+    def compute_biggest_degree_value(self, degree_method: Callable[[str], int]) -> int:
         """ Iterates through the nodes in `self` and retrieves the biggest degree value.
 
         Parameters
@@ -366,8 +365,8 @@ class Graph:
         int
             Biggest degree value in the given graph.
         """
-        most_connected_node = self.sort_vertices_by_degree(degree_method, self.get_vertices())[0][1]
-        return most_connected_node
+        biggest_degree_value = self.sort_vertices_by_degree(degree_method, self.get_vertices())[0][1]
+        return biggest_degree_value
 
     def degree_centrality(self, degree_method: Callable[[str], int], vertex: str) -> float:
         """ Computes the degree centrality of `vertex`, `DC(vertex)`.
@@ -387,9 +386,9 @@ class Graph:
         """
         node_level_centrality = self.node_level_centrality(degree_method, vertex)
         if node_level_centrality != 0:
-            return (self.most_connected_node- degree_method(vertex)) / node_level_centrality
+            return (self.most_connected_node_degree_value - degree_method(vertex)) / node_level_centrality
         else:
-            return self.most_connected_node - degree_method(vertex)
+            return self.most_connected_node_degree_value - degree_method(vertex)
 
     def enhanced_degree_centrality(self, degree_method: Callable[[str], int], vertex: str) -> float:
         """ Computes the enhanced degree centrality of `vertex`, `EDC(vertex)`.
@@ -544,7 +543,8 @@ class Graph:
         print(final_nodes)
         return final_nodes
 
-    def active_nodes(self, nodes_list: List[str]) -> List[str]:
+    @staticmethod
+    def active_nodes(nodes_list: List[str]) -> List[str]:
         """ Returns the top quarter of `nodes_list`, which correspond to the nodes with the 25% biggest EDC values.
 
         Parameters
@@ -558,7 +558,6 @@ class Graph:
             Top quarter of `nodes_list`
         """
         quarter = math.ceil(len(nodes_list)/4)
-        print(quarter)
         return nodes_list[0:quarter]
 
     def get_influential_nodes(self, degree_method: Callable[[str], int]) -> List[str]:
@@ -575,42 +574,42 @@ class Graph:
             List of influential nodes.
         """
         graph_nodes = self.nodes
-        if self.most_connected_node is None:
-            self.most_connected_node = self.mcn(degree_method)
+        if self.most_connected_node_degree_value is None:
+            self.most_connected_node_degree_value = self.compute_biggest_degree_value(degree_method)
         edcs = self.sort_nodes_by_edc(degree_method,graph_nodes)
         average_edc = self.average_enhanced_degree_centrality(edcs)
         fn = self.filter_out_nodes_edc_threshold(edcs,average_edc)
         return self.active_nodes(fn)
 
-    def select_random_nodes(self,k):
-        """ Retrieve case ID from file name.
+    def select_random_nodes(self, k: int) -> List[str]:
+        """ Returns a list of randomly selected nodes among the nodes of `self`.
 
         Parameters
         ----------
-        path : str
-            Name of the test file to retrieve the case ID from.
+        k : int
+            Number of nodes to be selected.
 
         Returns
         -------
-        al : dict
-            A list of split file name with case ID in it.
+        List[str]
+            List of randomly selected nodes.
         """
         vertices = self.get_vertices()
         selected_nodes = random.sample(vertices,k=k)
         return selected_nodes
 
-    def get_subgraph(self, nodes):
-        """ Retrieve case ID from file name.
+    def get_adjacency_list_of_subgraph(self, nodes: List[str]) -> Dict[str, List[str]]:
+        """ Builds from a set of nodes, a new adjacency list that will be associated to the subgraph which vertices are `nodes`.
 
         Parameters
         ----------
-        path : str
-            Name of the test file to retrieve the case ID from.
+        nodes : str
+            Nodes constituting the subgraph.
 
         Returns
         -------
-        al : dict
-            A list of split file name with case ID in it.
+        Dict[str, List[str]]
+            The adjacency list
         """
         new_al = {}
         for node in nodes:
@@ -618,79 +617,42 @@ class Graph:
             new_al[node] = out_nodes
         return new_al
 
-    def return_full_subgraph(self, number_of_nodes,degree_method_string):
-        """ Retrieve case ID from file name.
+    def build_subgraph(self, number_of_nodes: int, degree_method_string: str) -> 'Graph':
+        """ Extracts a subgraph of `self`.
+            This subgraph's nodes are `number_of_nodes` randomly selected vertices from the nodes of `self`.
 
         Parameters
         ----------
-        path : str
-            Name of the test file to retrieve the case ID from.
+        number_of_nodes : int
+            Number of nodes in the subgraph.
+
+        degree_method_string : str
+            String encoding the degree metric used: in-degree or our-degree.
 
         Returns
         -------
         Graph
-            A list of split file name with case ID in it.
+            subgraph of `self`
         """
-        new_al = self.get_subgraph(self.select_random_nodes(number_of_nodes))
+        new_al = self.get_adjacency_list_of_subgraph(self.select_random_nodes(number_of_nodes))
         sub = Graph("", new_al)
         degree_method = sub.in_degree if degree_method_string == "i" else sub.out_degree
-        sub.most_connected_node = sub.mcn(degree_method)
+        sub.most_connected_node_degree_value = sub.compute_biggest_degree_value(degree_method)
         return sub
 
-    def return_full_subgraph2(self, nodes):
-        """ Retrieve case ID from file name.
 
-        Parameters
-        ----------
-        path : str
-            Name of the test file to retrieve the case ID from.
-
-        Returns
-        -------
-        al : dict
-            A list of split file name with case ID in it.
-        """
-        new_al = self.get_subgraph(nodes)
-        sss = Graph("", new_al)
-        return sss
-
-
-def generate_random_graph():
-    """ Retrieve case ID from file name.
+def return_file_type(filename: str) -> str:
+    """ Returns the file type of the file identified by `filename`.
 
     Parameters
     ----------
-    path : str
-        Name of the test file to retrieve the case ID from.
+    filename : str
+        Name of the file.
 
     Returns
     -------
-    al : dict
-        A list of split file name with case ID in it.
-    """
-    entries = []
-    for i in range(2000):
-        a = randint(1,500)
-        b = randint(1,500)
-        while a == b or (a,b) in entries:
-            a = randint(1,500)
-            b = randint(1,500)
-        entries.append((a,b))
-        print(a,b)
-
-
-def file_type(filename):
-    """ Retrieve case ID from file name.
-
-    Parameters
-    ----------
-    path : str
-        Name of the test file to retrieve the case ID from.
-
-    Returns
-    -------
-    al : dict
-        A list of split file name with case ID in it.
+    str
+        file type
     """
     file = list(filename)
     dot_index = file.index(".")
@@ -698,18 +660,16 @@ def file_type(filename):
     return file_type
 
 
-def store_influential_nodes(path, nodes):
-    """ Retrieve case ID from file name.
+def write_nodes_to_txt_file(path: str, nodes: List[str]) -> None:
+    """Stores the vertices list `nodes` to a txt file.
 
     Parameters
     ----------
     path : str
-        Name of the test file to retrieve the case ID from.
+        Name of the txt file to write to.
 
-    Returns
-    -------
-    al : dict
-        A list of split file name with case ID in it.
+    nodes : List[str]
+        List of nodes to be put in the txt file.
     """
     with open(path, 'w') as output_file:
         for index, node in enumerate(nodes):
@@ -718,32 +678,10 @@ def store_influential_nodes(path, nodes):
                 output_file.write("\n")
 
 
-def write_graph_txt_file(path,g):
-    """ Retrieve case ID from file name.
-
-    Parameters
-    ----------
-    path : str
-        Name of the test file to retrieve the case ID from.
-
-    Returns
-    -------
-    al : dict
-        A list of split file name with case ID in it.
-    """
-    with open(path, 'w') as output_file:
-        edges = g.edges
-        for index, edge in enumerate(edges):
-            output_file.write(edge[0] + " " + edge[1])
-            if index != len(edges) - 1:
-                output_file.write("\n")
-
-
 if __name__ == "__main__":
     g = Graph("../wiki-Vote.txt")
-    s = g.return_full_subgraph(1000,"o")
+    s = g.build_subgraph(1000, "o")
     seeds = s.get_influential_nodes(s.out_degree)
-    lt = lt.LinearThresholdModel(s, seeds)
 
 
 
