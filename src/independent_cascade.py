@@ -19,7 +19,15 @@ class IndependentCascadeModel:
             probability of a node being influenced.
     """
     def __init__(self, g, seeds, act_prob):
-        self.cascade(g, seeds, act_prob)
+        self.all_influenced_nodes = [[]]
+        self.total_number_of_nodes = 0
+        self.all_influenced_nodes, self.total_number_of_nodes = self.cascade(g, seeds, act_prob)
+
+    def get_influenced_nodes(self):
+        return self.all_influenced_nodes
+
+    def get_total_number_of_influenced_nodes(self):
+        return self.total_number_of_nodes
 
     @staticmethod
     def prop_success(act_prob: float) -> bool:

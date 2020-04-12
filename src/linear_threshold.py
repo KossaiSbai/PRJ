@@ -1,4 +1,3 @@
-
 import copy
 from typing import List,Tuple,Dict
 from src.graph import Graph
@@ -17,7 +16,15 @@ class LinearThresholdModel:
     """
 
     def __init__(self, g, seeds):
-        self.cascade(g,seeds)
+        self.all_influenced_nodes = [[]]
+        self.total_number_of_nodes = 0
+        self.all_influenced_nodes, self.total_number_of_nodes = self.cascade(g,seeds)
+
+    def get_influenced_nodes(self):
+        return self.all_influenced_nodes
+
+    def get_total_number_of_influenced_nodes(self):
+        return self.total_number_of_nodes
 
     @staticmethod
     def compute_influence_sum(froms: List[str], influences: Dict[str, float]) -> float:
@@ -136,5 +143,7 @@ class LinearThresholdModel:
 
         seed_nodes = copy.deepcopy(seeds)  # prevent side effect
         return self.diffuse_all(g, seed_nodes, influences, thresholds)
+
+
 
 
