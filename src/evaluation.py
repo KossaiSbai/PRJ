@@ -89,6 +89,8 @@ def run_spreading_nodes_test(dataset_graph: Graph, k: int, n: int, methods_compa
         list of average spreading influence values.
     """
     average_spreadings = []
+    # Each sublist of average_spreadings stores the spreadings obtained via a given method.
+    # Hence, there will be as many sublists as compared methods.
     for j in range(methods_compared):
         average_spreadings.append([])
     for i in range(n):
@@ -96,6 +98,7 @@ def run_spreading_nodes_test(dataset_graph: Graph, k: int, n: int, methods_compa
         influential_nodes = sub.get_influential_nodes(sub.out_degree)
         other_nodes = sub.select_random_nodes(len(influential_nodes))
         spreadings = compute_spreading_influence_values(sub, influential_nodes, other_nodes, LinearThresholdModel)
+        # Appends the spreading obtained by each method in its associated sublist in average_spreadings
         for index,l in enumerate(average_spreadings):
             l.append(spreadings[index])
     average_spreadings = [sum(l)/float(len(l)) for l in average_spreadings]
@@ -154,6 +157,7 @@ def write_results_to_csv_file(path: str, i: int, j: int, data: Any) -> None:
         data to write in the csv file.
     """
     with open(path, 'r') as f:
+        # Extracts the rows, modifies them and overwrites the current content of the CSV file.
         reader = csv.reader(f)
         rows = list(reader)
         rows[i][j] = data
