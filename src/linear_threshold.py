@@ -1,18 +1,66 @@
 
 import copy
+from typing import List,Tuple,Dict
+from src.graph import Graph
 
 
 class LinearThresholdModel:
+    """Linear Threshold model class
+
+    Parameters
+    ----------
+    g : Graph
+        graph on which LT is performed.
+
+    seeds : List[str]
+         list of seed nodes
+    """
 
     def __init__(self, g, seeds):
         self.cascade(g,seeds)
 
     @staticmethod
-    def compute_influence_sum(froms, influences):
+    def compute_influence_sum(froms: List[str], influences: Dict[str, float]) -> float:
+        """ Computes the total sum of the influences of the seed nodes.
+
+        Parameters
+        ----------
+        froms :  List[str]
+            list of seed nodes
+
+        influences :  Dict[str,float]
+            A dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
+
+        Returns
+        -------
+        float
+            The total sum of the influences of the seed nodes.
+        """
         influence_sum = sum([influences[f] for f in froms])
         return influence_sum
 
-    def diffuse_one_round(self, g, seed_nodes, influences, thresholds):
+    def diffuse_one_round(self, g: Graph , seed_nodes: List[str], influences: Dict[str, float], thresholds: Dict[str, float]) -> Tuple[List[str],List[str]]:
+        """ Executes the diffusion process for one round.
+
+        Parameters
+        ----------
+        g :  Graph
+             graph on which LT is performed.
+
+        seed_nodes : List[str]
+            list of seed nodes.
+
+        influences : Dict[str, float]
+            A dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
+
+        thresholds : Dict[str, float]
+             A dictionary which entries (`v`, `t`) associate each node `v` to its threshold value `t`.
+
+        Returns
+        -------
+        Tuple[List[str],List[str]]
+            The list of the new seed nodes as well as a list of the nodes that got influenced at the given round.
+        """
         activated_nodes_of_this_round = set()
         all_vertices = g.nodes
         for s in seed_nodes:
@@ -24,15 +72,33 @@ class LinearThresholdModel:
                 if self.compute_influence_sum(active_nb, influences) >= thresholds[nb]:
                     activated_nodes_of_this_round.add(nb)
         activated_nodes_of_this_round = list(activated_nodes_of_this_round)
-        print("AN",activated_nodes_of_this_round)
         seed_nodes.extend(activated_nodes_of_this_round)
-        print("Seed nodes",seed_nodes)
         return seed_nodes, activated_nodes_of_this_round
 
-    def diffuse_all(self, g, seed_nodes, influences, thresholds):
-        layer_i_nodes = [[i for i in seed_nodes]]
+    def diffuse_all(self, g: Graph, seed_nodes: List[str], influences:  Dict[str, float], thresholds:  Dict[str, float]) -> Tuple[List[List[str]], int]:
+        """ Executes the diffusion process until no more nodes can be influenced.
+
+        Parameters
+        ----------
+        g :  Graph
+            graph on which LT is performed.
+
+        seed_nodes : List[str]
+            list of seed nodes.
+
+        influences : Dict[str, float]
+            A dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
+
+        thresholds : Dict[str, float]
+            A dictionary which entries (`v`, `t`) associate each node `v` to its threshold value `t`.
+
+        Returns
+        -------
+        Tuple[List[List[str]], int]
+            List of lists of influenced nodes as well as the total number of influenced nodes.
+        """
+        layer_i_nodes = [[i for i in seed_nodes]] # Each sublist at index `i` corresponds to the influenced nodes of round `i`.
         total_influenced_nodes = len(layer_i_nodes[0])
-        print("Initial",seed_nodes)
         while True:
             len_old = len(seed_nodes)
             (seed_nodes, activated_nodes_of_this_round) = self.diffuse_one_round(g, seed_nodes, influences, thresholds)
@@ -42,7 +108,21 @@ class LinearThresholdModel:
                 break
         return layer_i_nodes,total_influenced_nodes
 
-    def cascade(self, g, seeds):
+    def cascade(self, g: Graph, seeds: List[str]) -> Tuple[List[List[str]], int]:
+        """ Executes the LT diffusion process.
+
+        Parameters
+        ----------
+        g :  Graph
+            graph on which LT is performed.
+
+        seeds : List[str]
+            list of seed nodes.
+        Returns
+        -------
+        Tuple[List[List[str]], int]
+            List of lists of influenced nodes as well as the total number of influenced nodes.
+        """
         influences = {}
         thresholds = {}
         for s in seeds:
