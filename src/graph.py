@@ -481,7 +481,7 @@ class Graph:
         Returns
         -------
         List[Tuple[str,float]]
-            List of
+              A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
         degrees_tuples = [(vertex, metric(submetric, vertex)) for vertex in vertices]
         degrees_sorted = sorted(degrees_tuples, key=itemgetter(1), reverse=True)

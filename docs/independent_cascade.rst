@@ -1,7 +1,9 @@
 Independent Cascade module
 **************************
 
-.. automodule:: src.independent_cascade.IndependentCascadeModel
+The ``Independent Cascade Model`` class
+---------------------------------------
+.. autoclass:: src.independent_cascade.IndependentCascadeModel
    :members:
    :undoc-members:
    :show-inheritance:

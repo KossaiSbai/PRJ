@@ -1,6 +1,10 @@
 Linear Threshold module
 **************************
-.. automodule:: src.linear_threshold.LinearThresholdModel
+
+The ``Linear Threshold`` class
+------------------------------
+
+.. autoclass:: src.linear_threshold.LinearThresholdModel
    :members:
    :undoc-members:
    :show-inheritance:
