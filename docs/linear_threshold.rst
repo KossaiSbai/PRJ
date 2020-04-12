@@ -1,7 +1,7 @@
 Linear Threshold module
 **************************
 
-The ``Linear Threshold`` class
+The ``Linear Threshold Model`` class
 ------------------------------
 
 .. autoclass:: src.linear_threshold.LinearThresholdModel
