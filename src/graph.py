@@ -33,7 +33,7 @@ class Graph:
         self.most_connected_node_degree_value = None
         self.degree_centralities = {}
 
-    def get_edges(self) -> List[Tuple[str,str]]:
+    def get_edges(self) -> List[Tuple[str, str]]:
         """Extracts and returns the edges of `self`.
 
         Returns
@@ -157,7 +157,8 @@ class Graph:
         """
         return len(self.adjacency_list[vertex])
 
-    def compute_degrees(self, degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str, int]]:
+    @staticmethod
+    def compute_degrees(degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str, int]]:
         """ Computes and stores the degree values for each node, using the given degree metric.
 
         Parameters
@@ -258,7 +259,7 @@ class Graph:
         return self.sort_vertices_by_degree(self.out_degree, vertices)
 
     def select_vertices_with_k_biggest_degree_values(self, degree_method:  Callable[[str], int], k: int) -> List[str]:
-        """ Retrieve case ID from file name.
+        """ Select the vertices of `self` with the `k` biggest degree values.
 
         Parameters
         ----------
@@ -447,7 +448,8 @@ class Graph:
         predecessors = [v for v in vertices if vertex in self.adjacency_list[v]]
         return predecessors
 
-    def average_enhanced_degree_centrality(self, edcs: List[Tuple[str,float]]) -> float:
+    @staticmethod
+    def average_enhanced_degree_centrality(edcs: List[Tuple[str,float]]) -> float:
         """ Calculates the average enhanced degree centrality over `edcs`.
 
         Parameters
@@ -462,17 +464,18 @@ class Graph:
         """
         return sum([x[1] for x in edcs])/float(len(edcs))
 
-    def sort_by_special_degree_centrality_measures(self, metric: Callable[[Callable[[str], int],str],float],
-                                                   submetric: Callable[[str], int], vertices: List[str]) -> List[Tuple[str,float]]:
-        """ Computes the enhanced degree centrality of `vertex`, `EDC(vertex)`.
+    @staticmethod
+    def sort_by_advanced_degree_centrality_metric(advanced_metric: Callable[[Callable[[str], int], str], float],
+                                                  basic_metric: Callable[[str], int], vertices: List[str]) -> List[Tuple[str, float]]:
+        """ Sorts the nodes by degree values computed via an advanced degree metric such as `EDC` or `DC`.
 
         Parameters
         ----------
-        metric : Callable[[Callable[[str], int],str],float]
-            Metric used: EDC or DC for instance.
+        advanced_metric : Callable[[Callable[[str], int],str],float]
+            Advanced degree metric used: EDC or DC for instance.
 
-        submetric : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+        basic_metric : Callable[[str], int]
+            Basic degree metric used: in-degree or out-degree.
 
         vertices : List[str]
             Vertices of the graph
@@ -482,7 +485,7 @@ class Graph:
         List[Tuple[str,float]]
               A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
-        degrees_tuples = [(vertex, metric(submetric, vertex)) for vertex in vertices]
+        degrees_tuples = [(vertex, advanced_metric(basic_metric, vertex)) for vertex in vertices]
         degrees_sorted = sorted(degrees_tuples, key=itemgetter(1), reverse=True)
         return degrees_sorted
 
@@ -502,7 +505,7 @@ class Graph:
         List[Tuple[str,float]
             A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its EDC value.
         """
-        return self.sort_by_special_degree_centrality_measures(self.enhanced_degree_centrality,degree_method,vertices)
+        return self.sort_by_advanced_degree_centrality_metric(self.enhanced_degree_centrality, degree_method, vertices)
 
     def sort_nodes_by_degree_centrality(self,degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str,float]]:
         """Sorts the nodes by DC value.
@@ -520,7 +523,7 @@ class Graph:
         List[Tuple[str,float]
             A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its DC value.
         """
-        return self.sort_by_special_degree_centrality_measures(self.degree_centrality,degree_method,vertices)
+        return self.sort_by_advanced_degree_centrality_metric(self.degree_centrality, degree_method, vertices)
 
     def filter_out_nodes_edc_threshold(self, nodes_tuples: List[Tuple[str,float]], threshold: float) -> List[str]:
         """ Filters out the given nodes by their degree centrality value being greater than `threshold` or not.
@@ -618,8 +621,7 @@ class Graph:
         return new_al
 
     def build_subgraph(self, number_of_nodes: int, degree_method_string: str) -> 'Graph':
-        """ Extracts a subgraph of `self`.
-            This subgraph's nodes are `number_of_nodes` randomly selected vertices from the nodes of `self`.
+        """ Extracts a subgraph of `self`. This subgraph's nodes are `number_of_nodes` randomly selected vertices from the nodes of `self`.
 
         Parameters
         ----------
