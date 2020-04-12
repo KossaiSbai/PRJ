@@ -103,12 +103,12 @@ def run_spreading_nodes_test(dataset_graph: Graph, k: int, n: int, methods_compa
     return average_spreadings
 
 
-def compute_spreading_influence_values(graph: Graph, nodes_set_1: List[str], nodes_set_2: List[str], spreading_model: Any) -> List[float]:
+def compute_spreading_influence_values(dataset_graph: Graph, nodes_set_1: List[str], nodes_set_2: List[str], spreading_model: Any) -> List[float]:
     """ Computes the total number of influenced nodes after diffusion by a given spreading model. Two sets of nodes `nodes_set_1` and `nodes_set_2` are used as seed nodes.
 
     Parameters
     ----------
-    graph :  Graph
+    dataset_graph :  Graph
         graph on which the test is carried out.
 
     nodes_set_1 :  List[str]
@@ -126,8 +126,8 @@ def compute_spreading_influence_values(graph: Graph, nodes_set_1: List[str], nod
         list of average spreading influence values.
     """
     print("Influential nodes spreading")
-    sm1 = spreading_model(graph,nodes_set_1,0.2)
-    sm2 = spreading_model(graph, nodes_set_2,0.2)
+    sm1 = spreading_model(dataset_graph, nodes_set_1, 0.2)
+    sm2 = spreading_model(dataset_graph, nodes_set_2, 0.2)
     n1 = sm1.get_total_number_of_influenced_nodes()
     print(n1)
     print("Other nodes spreading")
