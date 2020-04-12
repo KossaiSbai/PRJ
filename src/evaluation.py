@@ -8,6 +8,7 @@ from typing import List,Any
 
 def run_time_spreading_nodes_test(dataset_graph: Graph, k: int, n: int) -> float:
     """ Computes the average time taken by the IM algorithm to compute the influential nodes.
+
     Parameters
     ----------
     dataset_graph :  Graph
@@ -38,6 +39,7 @@ def run_time_spreading_nodes_test(dataset_graph: Graph, k: int, n: int) -> float
 
 def run_influential_nodes_test(dataset_graph: Graph, k: int, n: int) -> float:
     """ Computes the average number of influential nodes returned by the IM algorithm.
+
     Parameters
     ----------
     dataset_graph :  Graph
@@ -66,6 +68,7 @@ def run_influential_nodes_test(dataset_graph: Graph, k: int, n: int) -> float:
 
 def run_spreading_nodes_test(dataset_graph: Graph, k: int, n: int, methods_compared: int) -> List[float]:
     """ Computes the average number of influenced nodes using two methods (influential vs random for example) after diffusion by a given spreading model.
+
     Parameters
     ----------
     dataset_graph :  Graph
@@ -102,15 +105,16 @@ def run_spreading_nodes_test(dataset_graph: Graph, k: int, n: int, methods_compa
 
 def compute_spreading_influence_values(graph: Graph, nodes_set_1: List[str], nodes_set_2: List[str], spreading_model: Any) -> List[float]:
     """ Computes the total number of influenced nodes after diffusion by a given spreading model. Two sets of nodes `nodes_set_1` and `nodes_set_2` are used as seed nodes.
+
     Parameters
     ----------
     graph :  Graph
         graph on which the test is carried out.
 
-    nodes_set_1 :  int
+    nodes_set_1 :  List[str]
         first set of nodes (influential nodes in our case)
 
-    nodes_set_2 :  int
+    nodes_set_2 :  List[str]
         second set of nodes (random nodes, in-degree nodes etc)
 
     spreading_model : Any
@@ -134,6 +138,7 @@ def compute_spreading_influence_values(graph: Graph, nodes_set_1: List[str], nod
 
 def write_results_to_csv_file(path: str, i: int, j: int, data: Any) -> None:
     """ Writes `data` in the given csv file.
+
     Parameters
     ----------
     path :  str
@@ -143,7 +148,7 @@ def write_results_to_csv_file(path: str, i: int, j: int, data: Any) -> None:
         index of the row of the csv file to write to.
 
     j :  int
-        index of the cellk within the row of the csv fikle to write to.
+        index of the cell within the row of the csv fikle to write to.
 
     data : Any
         data to write in the csv file.
