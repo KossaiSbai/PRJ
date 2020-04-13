@@ -124,21 +124,25 @@ function main()
    [s,t] = adjacency("test_graph.txt");
    % Creates a directed graph from the adjacency list. 
    g = digraph(s,t);
-   % The first figure displays the graph with nodes highlighted in blue. 
+   % The first figure displays the graph with nodes highlighted in blue.
+   figure;
    plot(g,'EdgeColor','k','NodeColor','#4DBEEE','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
    title('Randomly generated graph (27 edges and 20 nodes)')
    % The second figure displays the graph with nodes highlighted related to
    % relatively to their in-degree values.
+   figure;
    plot(g,'NodeCData',indegree(g),'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
    title('Same graph with nodes coloured by in degree')
    colorbar;
    % The third figure displays the graph with nodes highlighted related to
    % relatively to their out-degree values.
+   figure;
    plot(g,'NodeCData',outdegree(g),'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
    title('Same graph with nodes coloured by out degree')
    colorbar;
    % The fourth figure displays the graph with nodes highlighted related to
    % relatively to their LCC values. 
+   figure;
    lccs = compute_lccs(g);
    plot(g,'NodeCData',lccs,'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
    title('Same graph with nodes coloured by local clustering coefficient')
@@ -146,6 +150,7 @@ function main()
    % The fifth figure displays the graph with initial seed nodes highlighted
    % in red, influenced nodes (excluding initial seed nodes) in green abd
    % other nodes in blue.
+   figure;
    H = plot(g,'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75,'NodeColor','#4DBEEE');
    title('Same graph with influential nodes and influenced nodes')
    in = extract_nodes("influential_nodes.txt");
