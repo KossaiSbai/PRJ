@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Evaluation module" href="evaluation.html" />
-    <link rel="prev" title="Documentation" href="modules.html" /> 
+    <link rel="prev" title="Python" href="python.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,13 +82,17 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Documentation</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Graph module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#the-graph-class">The <code class="docutils literal notranslate"><span class="pre">Graph</span></code> class</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="python.html">Python</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Graph module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-graph-class">The <code class="docutils literal notranslate"><span class="pre">Graph</span></code> class</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="evaluation.html">Evaluation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="independent_cascade.html">Independent Cascade module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear_threshold.html">Linear Threshold module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html">Evaluation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="independent_cascade.html">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linear_threshold.html">Python</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">Matlab</a></li>
 </ul>
 </li>
 </ul>
@@ -138,6 +142,8 @@
         
           <li><a href="modules.html">Documentation</a> &raquo;</li>
         
+          <li><a href="python.html">Python</a> &raquo;</li>
+        
       <li>Graph module</li>
     
     
@@ -162,28 +168,28 @@
 <div class="section" id="the-graph-class">
 <h2>The <code class="docutils literal notranslate"><span class="pre">Graph</span></code> class<a class="headerlink" href="#the-graph-class" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
-<dt id="src.graph.Graph">
-<em class="property">class </em><code class="sig-prename descclassname">src.graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">al</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/graph.html#Graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph">
+<em class="property">class </em><code class="sig-prename descclassname">python.graph.</code><code class="sig-name descname">Graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">al</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/python/graph.html#Graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Conceptual class representing a graph data structure</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path of the txt file. Defaults to “”.</p></li>
-<li><p><strong>al</strong> (<em>dict</em><em>, </em><em>optional</em>) – Adjacency list. Defaults to None.</p></li>
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – path of the txt file. Defaults to “”.</p></li>
+<li><p><strong>al</strong> (<em>dict</em><em>, </em><em>optional</em>) – adjacency list. Defaults to None.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="src.graph.Graph.active_nodes">
-<em class="property">static </em><code class="sig-name descname">active_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodes_list</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.active_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.active_nodes" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.active_nodes">
+<em class="property">static </em><code class="sig-name descname">active_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodes_list</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.active_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.active_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the top quarter of <cite>nodes_list</cite>, which correspond to the nodes with the 25% biggest EDC values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nodes_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of nodes.</p>
+<dd class="field-odd"><p><strong>nodes_list</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of nodes.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Top quarter of <cite>nodes_list</cite></p>
+<dd class="field-even"><p>top quarter of <cite>nodes_list</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -192,15 +198,15 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.average_enhanced_degree_centrality">
-<em class="property">static </em><code class="sig-name descname">average_enhanced_degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">edcs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/graph.html#Graph.average_enhanced_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.average_enhanced_degree_centrality" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.average_enhanced_degree_centrality">
+<em class="property">static </em><code class="sig-name descname">average_enhanced_degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">edcs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/python/graph.html#Graph.average_enhanced_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.average_enhanced_degree_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the average enhanced degree centrality over <cite>edcs</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>edcs</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>,</em><em>float</em><em>]</em><em>]</em>) – EDCs values of all nodes.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Average EDC.</p>
+<dd class="field-even"><p>average EDC.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>
@@ -209,15 +215,15 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.build_adjacency_list">
-<code class="sig-name descname">build_adjacency_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.build_adjacency_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.build_adjacency_list" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.build_adjacency_list">
+<code class="sig-name descname">build_adjacency_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lines</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.build_adjacency_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.build_adjacency_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds the adjacency list of <cite>self</cite> from the content of a file (txt or tgf).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>lines</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of strings (<cite>a</cite>, <cite>b</cite>) denoting an edge between <cite>a</cite> and <cite>b</cite>.</p>
+<dd class="field-odd"><p><strong>lines</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of strings (<cite>a</cite>, <cite>b</cite>) denoting an edge between <cite>a</cite> and <cite>b</cite>.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The adjacency list of <cite>self</cite>.</p>
+<dd class="field-even"><p>the adjacency list of <cite>self</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Dict[str,List[str]]</p>
@@ -226,35 +232,35 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.build_subgraph">
-<code class="sig-name descname">build_subgraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number_of_nodes</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">degree_method_string</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a><a class="reference internal" href="_modules/src/graph.html#Graph.build_subgraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.build_subgraph" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.build_subgraph">
+<code class="sig-name descname">build_subgraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">number_of_nodes</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">degree_method_string</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#python.graph.Graph" title="python.graph.Graph">python.graph.Graph</a><a class="reference internal" href="_modules/python/graph.html#Graph.build_subgraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.build_subgraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts a subgraph of <cite>self</cite>. This subgraph’s nodes are <cite>number_of_nodes</cite> randomly selected vertices from the nodes of <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>number_of_nodes</strong> (<em>int</em>) – Number of nodes in the subgraph.</p></li>
-<li><p><strong>degree_method_string</strong> (<em>str</em>) – String encoding the degree metric used: in-degree or our-degree.</p></li>
+<li><p><strong>number_of_nodes</strong> (<em>int</em>) – number of nodes in the subgraph.</p></li>
+<li><p><strong>degree_method_string</strong> (<em>str</em>) – string encoding the degree metric used: in-degree or our-degree.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>subgraph of <cite>self</cite></p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#src.graph.Graph" title="src.graph.Graph">Graph</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#python.graph.Graph" title="python.graph.Graph">Graph</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.compute_biggest_degree_value">
-<code class="sig-name descname">compute_biggest_degree_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/src/graph.html#Graph.compute_biggest_degree_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.compute_biggest_degree_value" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.compute_biggest_degree_value">
+<code class="sig-name descname">compute_biggest_degree_value</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/python/graph.html#Graph.compute_biggest_degree_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.compute_biggest_degree_value" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterates through the nodes in <cite>self</cite> and retrieves the biggest degree value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p>
+<dd class="field-odd"><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Biggest degree value in the given graph.</p>
+<dd class="field-even"><p>biggest degree value in the given graph.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
@@ -263,18 +269,18 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.compute_degrees">
-<em class="property">static </em><code class="sig-name descname">compute_degrees</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.compute_degrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.compute_degrees" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.compute_degrees">
+<em class="property">static </em><code class="sig-name descname">compute_degrees</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.compute_degrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.compute_degrees" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes and stores the degree values for each node, using the given degree metric.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
-<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of nodes.</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of nodes.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,int]]</p>
@@ -283,15 +289,15 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.compute_in_degrees">
-<code class="sig-name descname">compute_in_degrees</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.compute_in_degrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.compute_in_degrees" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.compute_in_degrees">
+<code class="sig-name descname">compute_in_degrees</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.compute_in_degrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.compute_in_degrees" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes and stores the in-degree values for each node.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of nodes.</p>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of nodes.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,int]]</p>
@@ -300,15 +306,15 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.compute_out_degrees">
-<code class="sig-name descname">compute_out_degrees</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.compute_out_degrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.compute_out_degrees" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.compute_out_degrees">
+<code class="sig-name descname">compute_out_degrees</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.compute_out_degrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.compute_out_degrees" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes and stores the out-degree values for each node.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of nodes.</p>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of nodes.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,int]]</p>
@@ -317,14 +323,14 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.degree_centrality">
-<code class="sig-name descname">degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/graph.html#Graph.degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.degree_centrality" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.degree_centrality">
+<code class="sig-name descname">degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/python/graph.html#Graph.degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.degree_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the degree centrality of <cite>vertex</cite>, <cite>DC(vertex)</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the  degree centrality is computed.</p></li>
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertex</strong> (<em>str</em>) – vertex for which the  degree centrality is computed.</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -337,14 +343,14 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.enhanced_degree_centrality">
-<code class="sig-name descname">enhanced_degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/graph.html#Graph.enhanced_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.enhanced_degree_centrality" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.enhanced_degree_centrality">
+<code class="sig-name descname">enhanced_degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/python/graph.html#Graph.enhanced_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.enhanced_degree_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the enhanced degree centrality of <cite>vertex</cite>, <cite>EDC(vertex)</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the enhanced degree centrality is computed.</p></li>
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertex</strong> (<em>str</em>) – vertex for which the enhanced degree centrality is computed.</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -357,19 +363,19 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.filter_out_nodes_edc_threshold">
-<code class="sig-name descname">filter_out_nodes_edc_threshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodes_tuples</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">threshold</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.filter_out_nodes_edc_threshold"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.filter_out_nodes_edc_threshold" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.filter_out_nodes_edc_threshold">
+<code class="sig-name descname">filter_out_nodes_edc_threshold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodes_tuples</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">threshold</span><span class="p">:</span> <span class="n">float</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.filter_out_nodes_edc_threshold"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.filter_out_nodes_edc_threshold" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filters out the given nodes by their degree centrality value being greater than <cite>threshold</cite> or not.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>nodes_tuples</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>,</em><em>float</em><em>]</em><em>]</em>) – A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its EDC value.</p></li>
-<li><p><strong>threshold</strong> (<em>float</em>) – Threshold for filtering out nodes.
+<li><p><strong>nodes_tuples</strong> (<em>List</em><em>[</em><em>Tuple</em><em>[</em><em>str</em><em>,</em><em>float</em><em>]</em><em>]</em>) – list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its EDC value.</p></li>
+<li><p><strong>threshold</strong> (<em>float</em>) – threshold for filtering out nodes.
 If the degree centrality of a node <cite>v</cite> is below that threshold, then <cite>v</cite> is filtered out.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of filtered nodes.</p>
+<dd class="field-even"><p>list of filtered nodes.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -378,12 +384,12 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.get_adjacency_list">
-<code class="sig-name descname">get_adjacency_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.get_adjacency_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.get_adjacency_list" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.get_adjacency_list">
+<code class="sig-name descname">get_adjacency_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.get_adjacency_list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.get_adjacency_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts and returns the adjacency list of <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A dictionary which entries (<cite>v</cite>, <cite>e</cite>) associate each node <cite>v</cite> to its outgoing nodes <cite>e</cite>.</p>
+<dd class="field-odd"><p>dictionary which entries (<cite>v</cite>, <cite>e</cite>) associate each node <cite>v</cite> to its outgoing nodes <cite>e</cite>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>Dict[str,List[str]]</p>
@@ -392,15 +398,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.get_adjacency_list_of_subgraph">
-<code class="sig-name descname">get_adjacency_list_of_subgraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodes</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.get_adjacency_list_of_subgraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.get_adjacency_list_of_subgraph" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.get_adjacency_list_of_subgraph">
+<code class="sig-name descname">get_adjacency_list_of_subgraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nodes</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Dict<span class="p">[</span>str<span class="p">, </span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.get_adjacency_list_of_subgraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.get_adjacency_list_of_subgraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds from a set of nodes, a new adjacency list that will be associated to the subgraph which vertices are <cite>nodes</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>nodes</strong> (<em>str</em>) – Nodes constituting the subgraph.</p>
+<dd class="field-odd"><p><strong>nodes</strong> (<em>str</em>) – nodes constituting the subgraph.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The adjacency list</p>
+<dd class="field-even"><p>the adjacency list</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Dict[str, List[str]]</p>
@@ -409,12 +415,12 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.get_edges">
-<code class="sig-name descname">get_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.get_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.get_edges" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.get_edges">
+<code class="sig-name descname">get_edges</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.get_edges"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.get_edges" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts and returns the edges of <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A list of tuples where each tuple (<cite>a</cite>, <cite>b</cite>) is an edge between <cite>a</cite> and <cite>b</cite>.</p>
+<dd class="field-odd"><p>list of tuples where each tuple (<cite>a</cite>, <cite>b</cite>) is an edge between <cite>a</cite> and <cite>b</cite>.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>List[Tuple[str,str]]</p>
@@ -423,15 +429,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.get_influential_nodes">
-<code class="sig-name descname">get_influential_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.get_influential_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.get_influential_nodes" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.get_influential_nodes">
+<code class="sig-name descname">get_influential_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.get_influential_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.get_influential_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the influential nodes in <cite>self</cite> using the IM algorithm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p>
+<dd class="field-odd"><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of influential nodes.</p>
+<dd class="field-even"><p>list of influential nodes.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -440,12 +446,12 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.get_vertices">
-<code class="sig-name descname">get_vertices</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.get_vertices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.get_vertices" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.get_vertices">
+<code class="sig-name descname">get_vertices</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.get_vertices"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.get_vertices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extracts and returns the vertices of <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>A list of strings where each string <cite>v</cite>, is a node <cite>v</cite> of the graph.</p>
+<dd class="field-odd"><p>list of strings where each string <cite>v</cite>, is a node <cite>v</cite> of the graph.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>List[str]</p>
@@ -454,15 +460,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.in_degree">
-<code class="sig-name descname">in_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/src/graph.html#Graph.in_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.in_degree" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.in_degree">
+<code class="sig-name descname">in_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/python/graph.html#Graph.in_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.in_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the in-degree of the <cite>vertex</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the in-degree is calculated.</p>
+<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – vertex for which the in-degree is calculated.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The in-degree of the vertex.</p>
+<dd class="field-even"><p>the in-degree of the vertex.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
@@ -471,12 +477,12 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.local_clustering_coefficient">
-<code class="sig-name descname">local_clustering_coefficient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/graph.html#Graph.local_clustering_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.local_clustering_coefficient" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.local_clustering_coefficient">
+<code class="sig-name descname">local_clustering_coefficient</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/python/graph.html#Graph.local_clustering_coefficient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.local_clustering_coefficient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the local clustering coefficient of <cite>vertex</cite>, <cite>LCC(vertex)</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the local clustering coefficient is computed.</p>
+<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – vertex for which the local clustering coefficient is computed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><cite>LCC(vertex)</cite></p>
@@ -488,15 +494,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.neighbourhood">
-<code class="sig-name descname">neighbourhood</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.neighbourhood"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.neighbourhood" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.neighbourhood">
+<code class="sig-name descname">neighbourhood</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.neighbourhood"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.neighbourhood" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines the neighbourhood of <cite>vertex</cite>, which are the nodes connected to <cite>vertex</cite> by either an outgoing or incoming edge.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – Vertex which neighbourhood is determined.</p>
+<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – vertex which neighbourhood is determined.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of nodes corresponding to the neighbourhood of <cite>vertex</cite>.</p>
+<dd class="field-even"><p>list of nodes corresponding to the neighbourhood of <cite>vertex</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -505,14 +511,14 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.node_level_centrality">
-<code class="sig-name descname">node_level_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/graph.html#Graph.node_level_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.node_level_centrality" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.node_level_centrality">
+<code class="sig-name descname">node_level_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/python/graph.html#Graph.node_level_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.node_level_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the node level centrality of <cite>vertex</cite>, <cite>NLC(vertex)</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the  node level centrality is computed.</p></li>
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertex</strong> (<em>str</em>) – vertex for which the  node level centrality is computed.</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -525,15 +531,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.number_of_edges_within_neighbourhood">
-<code class="sig-name descname">number_of_edges_within_neighbourhood</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbourhood</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/src/graph.html#Graph.number_of_edges_within_neighbourhood"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.number_of_edges_within_neighbourhood" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.number_of_edges_within_neighbourhood">
+<code class="sig-name descname">number_of_edges_within_neighbourhood</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">neighbourhood</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/python/graph.html#Graph.number_of_edges_within_neighbourhood"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.number_of_edges_within_neighbourhood" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines the number of edges linking nodes in a given neighbourhood.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>neighbourhood</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of neighbours.</p>
+<dd class="field-odd"><p><strong>neighbourhood</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of neighbours.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Number of edges within neighbourhood.</p>
+<dd class="field-even"><p>number of edges within neighbourhood.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
@@ -542,15 +548,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.out_degree">
-<code class="sig-name descname">out_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/src/graph.html#Graph.out_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.out_degree" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.out_degree">
+<code class="sig-name descname">out_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/python/graph.html#Graph.out_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.out_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the out-degree of the <cite>vertex</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the out-degree is calculated.</p>
+<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – vertex for which the out-degree is calculated.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>The out-degree of the vertex.</p>
+<dd class="field-even"><p>the out-degree of the vertex.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>int</p>
@@ -559,18 +565,18 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.predecessors">
-<code class="sig-name descname">predecessors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.predecessors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.predecessors" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.predecessors">
+<code class="sig-name descname">predecessors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.predecessors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.predecessors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Derives the predecessors of <cite>vertex</cite>. Those are the nodes that are connected to <cite>vertex</cite>, via incoming edges to <cite>vertex</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the predecessors are derived.</p></li>
-<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Vertices of the original graph.</p></li>
+<li><p><strong>vertex</strong> (<em>str</em>) – vertex for which the predecessors are derived.</p></li>
+<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – vertices of the original graph.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of predecessors of <cite>vertex</cite>.</p>
+<dd class="field-even"><p>list of predecessors of <cite>vertex</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -579,37 +585,37 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.process_tgf_file">
-<code class="sig-name descname">process_tgf_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/src/graph.html#Graph.process_tgf_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.process_tgf_file" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.process_tgf_file">
+<code class="sig-name descname">process_tgf_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/python/graph.html#Graph.process_tgf_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.process_tgf_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds and stores the graph from a tgf file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path of the tgf file.</p>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – path of the tgf file.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.process_txt_file">
-<code class="sig-name descname">process_txt_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/src/graph.html#Graph.process_txt_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.process_txt_file" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.process_txt_file">
+<code class="sig-name descname">process_txt_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/python/graph.html#Graph.process_txt_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.process_txt_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Builds and stores the graph from a txt file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – Path of the txt file.</p>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – path of the txt file.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.select_random_nodes">
-<code class="sig-name descname">select_random_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.select_random_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.select_random_nodes" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.select_random_nodes">
+<code class="sig-name descname">select_random_nodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.select_random_nodes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.select_random_nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list of randomly selected nodes among the nodes of <cite>self</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>k</strong> (<em>int</em>) – Number of nodes to be selected.</p>
+<dd class="field-odd"><p><strong>k</strong> (<em>int</em>) – number of nodes to be selected.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of randomly selected nodes.</p>
+<dd class="field-even"><p>list of randomly selected nodes.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -618,18 +624,18 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.select_vertices_with_k_biggest_degree_values">
-<code class="sig-name descname">select_vertices_with_k_biggest_degree_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.select_vertices_with_k_biggest_degree_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.select_vertices_with_k_biggest_degree_values" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.select_vertices_with_k_biggest_degree_values">
+<code class="sig-name descname">select_vertices_with_k_biggest_degree_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.select_vertices_with_k_biggest_degree_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.select_vertices_with_k_biggest_degree_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select the vertices of <cite>self</cite> with the <cite>k</cite> biggest degree values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
-<li><p><strong>k</strong> (<em>int</em>) – Number of vertices to be selected.</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – number of vertices to be selected.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of selected vertices.</p>
+<dd class="field-even"><p>list of selected vertices.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -638,19 +644,19 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.sort_by_advanced_degree_centrality_metric">
-<em class="property">static </em><code class="sig-name descname">sort_by_advanced_degree_centrality_metric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">advanced_metric</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">, </span>str<span class="p">]</span><span class="p">, </span>float<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">basic_metric</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.sort_by_advanced_degree_centrality_metric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.sort_by_advanced_degree_centrality_metric" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.sort_by_advanced_degree_centrality_metric">
+<em class="property">static </em><code class="sig-name descname">sort_by_advanced_degree_centrality_metric</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">advanced_metric</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span><span class="p">, </span>str<span class="p">]</span><span class="p">, </span>float<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">basic_metric</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.sort_by_advanced_degree_centrality_metric"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.sort_by_advanced_degree_centrality_metric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts the nodes by degree values computed via an advanced degree metric such as <cite>EDC</cite> or <cite>DC</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>advanced_metric</strong> (<em>Callable</em><em>[</em><em>[</em><em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em><em>,</em><em>str</em><em>]</em><em>,</em><em>float</em><em>]</em>) – Advanced degree metric used: EDC or DC for instance.</p></li>
-<li><p><strong>basic_metric</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Basic degree metric used: in-degree or out-degree.</p></li>
-<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Vertices of the graph</p></li>
+<li><p><strong>advanced_metric</strong> (<em>Callable</em><em>[</em><em>[</em><em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em><em>,</em><em>str</em><em>]</em><em>,</em><em>float</em><em>]</em>) – advanced degree metric used: EDC or DC for instance.</p></li>
+<li><p><strong>basic_metric</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – basic degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – vertices of the graph.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,float]]</p>
@@ -659,18 +665,18 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.sort_nodes_by_degree_centrality">
-<code class="sig-name descname">sort_nodes_by_degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.sort_nodes_by_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.sort_nodes_by_degree_centrality" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.sort_nodes_by_degree_centrality">
+<code class="sig-name descname">sort_nodes_by_degree_centrality</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.sort_nodes_by_degree_centrality"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.sort_nodes_by_degree_centrality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts the nodes by DC value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
-<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Vertices of the graph</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – vertices of the graph.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its DC value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its DC value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,float]</p>
@@ -679,18 +685,18 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.sort_nodes_by_edc">
-<code class="sig-name descname">sort_nodes_by_edc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.sort_nodes_by_edc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.sort_nodes_by_edc" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.sort_nodes_by_edc">
+<code class="sig-name descname">sort_nodes_by_edc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>float<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.sort_nodes_by_edc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.sort_nodes_by_edc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts the nodes by EDC value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
-<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – Vertices of the graph</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – vertices of the graph.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its EDC value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its EDC value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,float]</p>
@@ -699,18 +705,18 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.sort_vertices_by_degree">
-<code class="sig-name descname">sort_vertices_by_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.sort_vertices_by_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.sort_vertices_by_degree" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.sort_vertices_by_degree">
+<code class="sig-name descname">sort_vertices_by_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">degree_method</span><span class="p">:</span> <span class="n">Callable<span class="p">[</span><span class="p">[</span>str<span class="p">]</span><span class="p">, </span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.sort_vertices_by_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.sort_vertices_by_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts the nodes by degree value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – Degree metric used: in-degree or out-degree.</p></li>
-<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of nodes.</p></li>
+<li><p><strong>degree_method</strong> (<em>Callable</em><em>[</em><em>[</em><em>str</em><em>]</em><em>, </em><em>int</em><em>]</em>) – degree metric used: in-degree or out-degree.</p></li>
+<li><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of nodes.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its degree value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,int]]</p>
@@ -719,15 +725,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.sort_vertices_by_in_degree">
-<code class="sig-name descname">sort_vertices_by_in_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.sort_vertices_by_in_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.sort_vertices_by_in_degree" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.sort_vertices_by_in_degree">
+<code class="sig-name descname">sort_vertices_by_in_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.sort_vertices_by_in_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.sort_vertices_by_in_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts the nodes by in-degree value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of nodes.</p>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of nodes.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its in-degree value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its in-degree value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,int]]</p>
@@ -736,15 +742,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.sort_vertices_by_out_degree">
-<code class="sig-name descname">sort_vertices_by_out_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.sort_vertices_by_out_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.sort_vertices_by_out_degree" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.sort_vertices_by_out_degree">
+<code class="sig-name descname">sort_vertices_by_out_degree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>Tuple<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.sort_vertices_by_out_degree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.sort_vertices_by_out_degree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sorts the nodes by out-degree value.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of nodes.</p>
+<dd class="field-odd"><p><strong>vertices</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – list of nodes.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>A list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its out-degree value.</p>
+<dd class="field-even"><p>list of tuples (<cite>v</cite>, <cite>d</cite>) where <cite>v</cite> is a given vertex and <cite>d</cite> is its out-degree value.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[Tuple[str,int]]</p>
@@ -753,15 +759,15 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
 </dd></dl>
 
 <dl class="py method">
-<dt id="src.graph.Graph.successors">
-<code class="sig-name descname">successors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/src/graph.html#Graph.successors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.graph.Graph.successors" title="Permalink to this definition">¶</a></dt>
+<dt id="python.graph.Graph.successors">
+<code class="sig-name descname">successors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vertex</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/python/graph.html#Graph.successors"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.graph.Graph.successors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Derives the successors of <cite>vertex</cite>. Those are the nodes that are connected to <cite>vertex</cite>, via outgoing edges from <cite>vertex</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – Vertex for which the successors are derived.</p>
+<dd class="field-odd"><p><strong>vertex</strong> (<em>str</em>) – vertex for which the successors are derived.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>List of successors of <cite>vertex</cite>.</p>
+<dd class="field-even"><p>list of successors of <cite>vertex</cite>.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>List[str]</p>
@@ -785,7 +791,7 @@ If the degree centrality of a node <cite>v</cite> is below that threshold, then 
         <a href="evaluation.html" class="btn btn-neutral float-right" title="Evaluation module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="modules.html" class="btn btn-neutral float-left" title="Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

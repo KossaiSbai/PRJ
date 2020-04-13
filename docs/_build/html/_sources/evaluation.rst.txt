@@ -1,7 +1,7 @@
 Evaluation module
-*****************
+-----------------
 
-.. automodule:: src.evaluation
+.. automodule:: python.evaluation
    :members:
    :undoc-members:
    :show-inheritance:

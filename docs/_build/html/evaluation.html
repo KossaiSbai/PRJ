@@ -82,10 +82,14 @@
             
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="graph.html">Graph module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Evaluation module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="independent_cascade.html">Independent Cascade module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear_threshold.html">Linear Threshold module</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="python.html">Python</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="graph.html">Graph module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Evaluation module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="independent_cascade.html">Independent Cascade module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linear_threshold.html">Linear Threshold module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">Matlab</a></li>
 </ul>
 </li>
 </ul>
@@ -135,6 +139,8 @@
         
           <li><a href="modules.html">Documentation</a> &raquo;</li>
         
+          <li><a href="python.html">Python</a> &raquo;</li>
+        
       <li>Evaluation module</li>
     
     
@@ -154,18 +160,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-src.evaluation">
-<span id="evaluation-module"></span><h1>Evaluation module<a class="headerlink" href="#module-src.evaluation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-python.evaluation">
+<span id="evaluation-module"></span><h1>Evaluation module<a class="headerlink" href="#module-python.evaluation" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="src.evaluation.compute_spreading_influence_values">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">compute_spreading_influence_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">nodes_set_1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">nodes_set_2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">spreading_model</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="reference internal" href="_modules/src/evaluation.html#compute_spreading_influence_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.compute_spreading_influence_values" title="Permalink to this definition">¶</a></dt>
+<dt id="python.evaluation.compute_spreading_influence_values">
+<code class="sig-prename descclassname">python.evaluation.</code><code class="sig-name descname">compute_spreading_influence_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph">python.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">nodes_set_1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">nodes_set_2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">spreading_model</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="reference internal" href="_modules/python/evaluation.html#compute_spreading_influence_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.evaluation.compute_spreading_influence_values" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the total number of influenced nodes after diffusion by a given spreading model. Two sets of nodes <cite>nodes_set_1</cite> and <cite>nodes_set_2</cite> are used as seed nodes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
-<li><p><strong>nodes_set_1</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – first set of nodes (influential nodes in our case)</p></li>
-<li><p><strong>nodes_set_2</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – second set of nodes (random nodes, in-degree nodes etc)</p></li>
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>nodes_set_1</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – first set of nodes (influential nodes in our case).</p></li>
+<li><p><strong>nodes_set_2</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – second set of nodes (random nodes, in-degree nodes etc).</p></li>
 <li><p><strong>spreading_model</strong> (<em>Any</em>) – spreading model used: either IC or LT.</p></li>
 </ul>
 </dd>
@@ -179,13 +185,13 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="src.evaluation.run_influential_nodes_test">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_influential_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/evaluation.html#run_influential_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.run_influential_nodes_test" title="Permalink to this definition">¶</a></dt>
+<dt id="python.evaluation.run_influential_nodes_test">
+<code class="sig-prename descclassname">python.evaluation.</code><code class="sig-name descname">run_influential_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph">python.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/python/evaluation.html#run_influential_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.evaluation.run_influential_nodes_test" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the average number of influential nodes returned by the IM algorithm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
 <li><p><strong>k</strong> (<em>int</em>) – size of subgraph</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – number of iterations of the test.</p></li>
 </ul>
@@ -200,16 +206,16 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="src.evaluation.run_spreading_nodes_test">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">methods_compared</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="reference internal" href="_modules/src/evaluation.html#run_spreading_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.run_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
+<dt id="python.evaluation.run_spreading_nodes_test">
+<code class="sig-prename descclassname">python.evaluation.</code><code class="sig-name descname">run_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph">python.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">methods_compared</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="reference internal" href="_modules/python/evaluation.html#run_spreading_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.evaluation.run_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the average number of influenced nodes using two methods (influential vs random for example) after diffusion by a given spreading model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
 <li><p><strong>k</strong> (<em>int</em>) – size of subgraph</p></li>
-<li><p><strong>n</strong> (<em>int</em>) – Number of iterations of the test.</p></li>
-<li><p><strong>methods_compared</strong> (<em>int</em>) – Number of methods that are compared</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – number of iterations of the test.</p></li>
+<li><p><strong>methods_compared</strong> (<em>int</em>) – number of methods that are compared.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -222,13 +228,13 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="src.evaluation.run_time_spreading_nodes_test">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_time_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/evaluation.html#run_time_spreading_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.run_time_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
+<dt id="python.evaluation.run_time_spreading_nodes_test">
+<code class="sig-prename descclassname">python.evaluation.</code><code class="sig-name descname">run_time_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph">python.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/python/evaluation.html#run_time_spreading_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.evaluation.run_time_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes the average time taken by the IM algorithm to compute the influential nodes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#python.graph.Graph" title="python.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
 <li><p><strong>k</strong> (<em>int</em>) – size of subgraph.</p></li>
 <li><p><strong>n</strong> (<em>int</em>) – number of iterations of the test.</p></li>
 </ul>
@@ -243,15 +249,15 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="src.evaluation.write_results_to_csv_file">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">write_results_to_csv_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">i</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">j</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/src/evaluation.html#write_results_to_csv_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.write_results_to_csv_file" title="Permalink to this definition">¶</a></dt>
+<dt id="python.evaluation.write_results_to_csv_file">
+<code class="sig-prename descclassname">python.evaluation.</code><code class="sig-name descname">write_results_to_csv_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">i</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">j</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/python/evaluation.html#write_results_to_csv_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#python.evaluation.write_results_to_csv_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes <cite>data</cite> in the given csv file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em>) – path of the csv file.</p></li>
 <li><p><strong>i</strong> (<em>int</em>) – index of the row of the csv file to write to.</p></li>
-<li><p><strong>j</strong> (<em>int</em>) – index of the cell within the row of the csv fikle to write to.</p></li>
+<li><p><strong>j</strong> (<em>int</em>) – index of the cell within the row of the csv file to write to.</p></li>
 <li><p><strong>data</strong> (<em>Any</em>) – data to write in the csv file.</p></li>
 </ul>
 </dd>

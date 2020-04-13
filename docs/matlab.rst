@@ -3,4 +3,4 @@ Matlab
 
 Matlab module
 -------------
-`Documentation  </Users/kossaisbai/PRJ/matlab/html/PRJ.html>`_
+ `here <https://github.com/IanHarvey/bluepy/>`_
