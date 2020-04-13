@@ -2,8 +2,8 @@ from operator import itemgetter
 from random import randint
 import math
 import random
-import src.linear_threshold as lt
 from typing import List,Callable,Tuple,Dict
+import itertools
 
 
 class Graph:
@@ -554,7 +554,6 @@ class Graph:
             list of filtered nodes.
         """
         final_nodes = [x[0] for x in nodes_tuples if self.degree_centralities[x[0]] >= threshold]
-        print(final_nodes)
         return final_nodes
 
     @staticmethod
@@ -693,9 +692,20 @@ def write_nodes_to_txt_file(path: str, nodes: List[str]) -> None:
 
 
 if __name__ == "__main__":
-    g = Graph("../wiki-Vote.txt")
-    s = g.build_subgraph(1000, "o")
-    seeds = s.get_influential_nodes(s.out_degree)
+    import src.linear_threshold as lt
+    import src.independent_cascade as ic
+    g = Graph("../test_graph.txt")
+    seeds = g.get_influential_nodes(g.out_degree)
+    print(seeds)
+    write_nodes_to_txt_file("../influential_nodes.txt",seeds)
+    all_influenced_nodes = ic.IndependentCascadeModel(g, seeds,0.2).get_influenced_nodes()
+    all_influenced_nodes2 = lt.LinearThresholdModel(g, seeds).get_influenced_nodes()
+    influenced_nodes = all_influenced_nodes[1:len(all_influenced_nodes)]
+    influenced_nodes = list(itertools.chain(*influenced_nodes))
+    write_nodes_to_txt_file("../influenced_nodes.txt", influenced_nodes)
+    print(all_influenced_nodes)
+    print(all_influenced_nodes2)
+
 
 
 
