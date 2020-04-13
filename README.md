@@ -24,21 +24,22 @@ Both Python and Matlab documentations are hosted on Read the Docs and built usin
 ## Run the project 
 In order to run the source code for this project, please carry out the following instructions: 
 1. Clone the contents of this repository in an editor of your choice.
-2. The Python part can be executed by running graph.py and evaluation.py
+2. The Python part can be executed by running graph.py and evaluation.py.
 3. Regarding the Matlab part, open the file PRJ/matlab/PRJ.m and execute it via a Matlab editor such as [MATLAB_R2020a](https://www.mathworks.com/products/new_products/latest_features.html). 
 
 
 The main method of graph.py does the following:
 1. Reads a given file and creates a graph out of it.
 2. Computes the most influential nodes of the graph by executing the IM algorithm.
-3. Stores the returned nodes in a txt file called "influential_nodes.txt"
-4. Carries out the diffusion process using a specific model such as Linear Threshold (LT)
+3. Stores the returned nodes in a txt file called "influential_nodes.txt".
+4. Carries out the diffusion process using a specific model such as Linear Threshold (LT).
 5. The latter returns a list of influenced nodes.
 6. Those are written to a txt file called "influenced_nodes.txt".
 
 When open for the first time, graph.py will execute the previous steps for a randomly generated graph G stored in test_graph.txt. 
 
-After the Python code is run, the three previously mentioned txt files contents get copied in the matlab folder.
+After the Python code is run, the three previously mentioned txt files contents should get copied in the matlab folder corresponding files:
+so for instance the file "influential_nodes.txt" storing the seed nodes should be copied in the matlab folder.  
 
 Subsequently the Matlab code will display the various figures for a given graph data.
 
