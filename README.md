@@ -1,1 +1,5 @@
 # PRJ
+
+## Abstract
+A **social network** can be defined as a structure connecting users with any kind of link such as friendship. In respect of social networks, one of the main problems to be solved and hence one of the main area of research, is finding the most influential nodes. This problem is called the **influence maximization problem**. Achieving this task can result tricky as the number of users gets bigger and bigger. The most common way to tackle this problem is to represent the social network as a graph where nodes represents users and edges denote the relationships between them. Using this graph representation approach, we can analyse a social network in order to find the most influential nodes. 
+In this paper, the "enhanced degree centrality" approach [22] is extended for directed graphs. The implemented approach's performance is then analysed in two datasets and compared with several metric measures such as in-degree, out-degree and local clustering coefficient. By comparison, it is found that the nodes identified by the algorithm tend to have an overall better influence spread depending on the dataset. 
