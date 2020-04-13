@@ -1,0 +1,346 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>PRJ</title><meta name="generator" content="MATLAB 9.8"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2020-04-13"><meta name="DC.source" content="PRJ.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>PRJ</h1><!--introduction--><p>Documentation of the Matlab code of the project.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">Extract influential nodes</a></li><li><a href="#4">Adjacency list.</a></li><li><a href="#6">Neighbourhood of a node.</a></li><li><a href="#7">Number of edges in a neighbourhood</a></li><li><a href="#8">Local clustering coefficient</a></li><li><a href="#10">Local clustering coefficient for all nodes.</a></li><li><a href="#11">Main function</a></li></ul></div>
+<h2 id="2">Extract influential nodes</h2><p>This function reads a txt file and stores the influential nodes in <tt>i_nodes</tt>.</p><pre class="codeinput">  <span class="keyword">function</span> i_nodes = extract_nodes(file_path)
+   fid = fopen(file_path); <span class="comment">% opens the file.</span>
+   tline = fgetl(fid);
+   i_nodes = cell(1); <span class="comment">% cell array storing the nodes.</span>
+   i = 1;
+   <span class="keyword">while</span> ischar(tline)
+       tline = tline(~isspace(tline)); <span class="comment">% gets rid of whitespace.</span>
+       i_nodes{1,i} = tline;
+       tline = fgetl(fid);
+       i = i+1;
+   <span class="keyword">end</span>
+  <span class="keyword">end</span>
+</pre></p><h2 id="4">Adjacency list.</h2><p>This function builds the adjacency list of a graph by reading the txt file.</p><pre class="codeinput"><span class="keyword">function</span> [s,t] = adjacency(file_path)
+    fid = fopen(file_path);
+    tline = fgetl(fid);
+    i = 1;
+    s = cell(1,10);
+    t = cell(1,10);
+    <span class="keyword">while</span> ischar(tline)
+        nodes = split(tline);
+        <span class="keyword">if</span>(~strcmp(nodes(1),nodes(2))) <span class="comment">% checks if the vertices are the same to avoid self loops.</span>
+           s(i) = nodes(1);
+           t(i) = nodes(2);
+        <span class="keyword">end</span>
+        tline = fgetl(fid);
+        i = i+1;
+    <span class="keyword">end</span>
+    <span class="comment">% gets rid of empty cell entries in both |s| and |t|.</span>
+    s = s(~cellfun(@isempty, s));
+    t = t(~cellfun(@isempty, t));
+<span class="keyword">end</span>
+</pre><p><img vspace="5" hspace="5" src="initial_graph.jpg" alt=""> </p><h2 id="6">Neighbourhood of a node.</h2><p>This function derives the neighbourhood of a node. This corresponds to all the nodes nodes connected to <tt>node</tt> by either an outgoing or incoming edge.</p><pre class="codeinput"><span class="keyword">function</span> [neighbours] = neighbourhood(graph,node)
+    incoming_neighbours = predecessors(graph,node);
+    outgoing_neighbours = successors(graph,node);
+    <span class="comment">% Union of incoming and outgoing neighbours.</span>
+    neighbours = {incoming_neighbours,outgoing_neighbours};
+    <span class="comment">% |cat| command puts merges both cell arrays into one.</span>
+    neighbours = cat(1,neighbours{:});
+    <span class="comment">% Gets rid of duplicates.</span>
+    neighbours = unique(neighbours);
+<span class="keyword">end</span>
+</pre><h2 id="7">Number of edges in a neighbourhood</h2><p>This function computes the number of edges linking any two nodes in <tt>neighbours</tt>.</p><pre class="codeinput"><span class="keyword">function</span> [n] = number_of_edges_within_neighbourhood(graph,neighbours)
+  n = 0;
+  <span class="keyword">for</span> index = 1:size(neighbours,1)
+       neighbour = neighbours{index,1};
+       [~,outgoing_nodes] = outedges(graph,neighbour);
+       <span class="comment">% Derives the number of nodes that are both in |neighbours| and outgoing nodes of |neighbour|.</span>
+       n = n+size(intersect(neighbours,outgoing_nodes),1);
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><h2 id="8">Local clustering coefficient</h2><p>This function computes the local clustering coefficient of <tt>vertex</tt>. The local clustering coefficient identifies how connected is the neighbourhood of <tt>vertex</tt>. <pre class="codeinput"><span class="keyword">function</span> lcc = local_clustering_coefficient(graph,vertex)
+    vertex_neighbours = neighbourhood(graph,vertex);
+    number_of_neighbours = size(vertex_neighbours,1);
+    <span class="keyword">if</span> size(vertex_neighbours,1) &gt; 1
+        lcc = number_of_edges_within_neighbourhood(graph,vertex_neighbours)./(number_of_neighbours * (number_of_neighbours -1));
+    <span class="keyword">else</span>
+        lcc =0;
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><p><img vspace="5" hspace="5" src="lcc.jpg" alt=""> </p><h2 id="10">Local clustering coefficient for all nodes.</h2><p>Calculates local clustering coefficient values for all vertices.</p><pre class="codeinput"><span class="keyword">function</span> lccs = compute_lccs(g)
+  nodes = g.Nodes;
+  lccs = zeros(size(nodes,1),1); <span class="comment">% initialises an array storing LCC values.</span>
+  <span class="keyword">for</span> i = 1:size(nodes,1)
+      <span class="comment">% |nodes(i,:).Name| extracts the name as a string of the given node.</span>
+      lccs(i) = local_clustering_coefficient(g,nodes(i,:).Name);
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><h2 id="11">Main function</h2><p>Plots the graph in several figures.</p><pre class="codeinput"><span class="keyword">function</span> main()
+   [s,t] = adjacency(<span class="string">"test_graph.txt"</span>);
+   <span class="comment">% Creates a directed graph from the adjacency list.</span>
+   g = digraph(s,t);
+   <span class="comment">% The first figure displays the graph with nodes highlighted in blue.</span>
+   plot(g,<span class="string">'EdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'NodeColor'</span>,<span class="string">'#4DBEEE'</span>,<span class="string">'MarkerSize'</span>,7,<span class="string">'LineStyle'</span>,<span class="string">'-'</span>,<span class="string">'LineWidth'</span>,0.75);
+   title(<span class="string">'Randomly generated graph (27 edges and 20 nodes)'</span>)
+   <span class="comment">% The second figure displays the graph with nodes highlighted related to</span>
+   <span class="comment">% relatively to their in-degree values.</span>
+   plot(g,<span class="string">'NodeCData'</span>,indegree(g),<span class="string">'EdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerSize'</span>,7,<span class="string">'LineStyle'</span>,<span class="string">'-'</span>,<span class="string">'LineWidth'</span>,0.75);
+   title(<span class="string">'Same graph with nodes coloured by in degree'</span>)
+   colorbar;
+   <span class="comment">% The third figure displays the graph with nodes highlighted related to</span>
+   <span class="comment">% relatively to their out-degree values.</span>
+   plot(g,<span class="string">'NodeCData'</span>,outdegree(g),<span class="string">'EdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerSize'</span>,7,<span class="string">'LineStyle'</span>,<span class="string">'-'</span>,<span class="string">'LineWidth'</span>,0.75);
+   title(<span class="string">'Same graph with nodes coloured by out degree'</span>)
+   colorbar;
+   <span class="comment">% The fourth figure displays the graph with nodes highlighted related to</span>
+   <span class="comment">% relatively to their LCC values.</span>
+   lccs = compute_lccs(g);
+   plot(g,<span class="string">'NodeCData'</span>,lccs,<span class="string">'EdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerSize'</span>,7,<span class="string">'LineStyle'</span>,<span class="string">'-'</span>,<span class="string">'LineWidth'</span>,0.75);
+   title(<span class="string">'Same graph with nodes coloured by local clustering coefficient'</span>)
+   colorbar;
+   <span class="comment">% The fifth figure displays the graph with initial seed nodes highlighted</span>
+   <span class="comment">% in red, influenced nodes (excluding initial seed nodes) in green abd</span>
+   <span class="comment">% other nodes in blue.</span>
+   H = plot(g,<span class="string">'EdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerSize'</span>,7,<span class="string">'LineStyle'</span>,<span class="string">'-'</span>,<span class="string">'LineWidth'</span>,0.75,<span class="string">'NodeColor'</span>,<span class="string">'#4DBEEE'</span>);
+   title(<span class="string">'Same graph with influential nodes and influenced nodes'</span>)
+   in = extract_nodes(<span class="string">"influential_nodes.txt"</span>);
+   is = extract_nodes(<span class="string">'influenced_nodes.txt'</span>);
+   highlight(H,in,<span class="string">'NodeColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerSize'</span>,7);
+   highlight(H,is,<span class="string">'NodeColor'</span>,<span class="string">'g'</span>,<span class="string">'MarkerSize'</span>,7);
+<span class="keyword">end</span>
+</pre><p><img vspace="5" hspace="5" src="in_degree.jpg" alt=""> </p><p><img vspace="5" hspace="5" src="out_degree.jpg" alt=""> </p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% PRJ
+% Documentation of the Matlab code of the project. 
+%%
+main();
+%% Extract influential nodes
+% This function reads a txt file and stores the influential nodes in
+% |i_nodes|.
+  
+
+  function i_nodes = extract_nodes(file_path)
+   fid = fopen(file_path); % opens the file. 
+   tline = fgetl(fid); 
+   i_nodes = cell(1); % cell array storing the nodes. 
+   i = 1;
+   while ischar(tline)
+       tline = tline(~isspace(tline)); % gets rid of whitespace. 
+       i_nodes{1,i} = tline;
+       tline = fgetl(fid);
+       i = i+1;
+   end
+  end
+  
+   
+%%
+% 
+% <<spe.jpg>>
+%
+ 
+ %% Adjacency list.
+% This function builds the adjacency list of a graph by reading the txt
+% file. 
+ 
+function [s,t] = adjacency(file_path)
+    fid = fopen(file_path);
+    tline = fgetl(fid);
+    i = 1;
+    s = cell(1,10);
+    t = cell(1,10);
+    while ischar(tline)
+        nodes = split(tline);
+        if(~strcmp(nodes(1),nodes(2))) % checks if the vertices are the same to avoid self loops. 
+           s(i) = nodes(1);
+           t(i) = nodes(2);
+        end
+        tline = fgetl(fid);
+        i = i+1;
+    end
+    % gets rid of empty cell entries in both |s| and |t|. 
+    s = s(~cellfun(@isempty, s)); 
+    t = t(~cellfun(@isempty, t));
+end
+%%
+% 
+% <<initial_graph.jpg>>
+% 
+ 
+ %% Neighbourhood of a node. 
+% This function derives the neighbourhood of a node. This corresponds to
+% all the nodes nodes connected to |node| by either an outgoing or 
+% incoming edge.
+ 
+function [neighbours] = neighbourhood(graph,node)
+    incoming_neighbours = predecessors(graph,node);
+    outgoing_neighbours = successors(graph,node);
+    % Union of incoming and outgoing neighbours. 
+    neighbours = {incoming_neighbours,outgoing_neighbours};
+    % |cat| command puts merges both cell arrays into one. 
+    neighbours = cat(1,neighbours{:});
+    % Gets rid of duplicates. 
+    neighbours = unique(neighbours);
+end
+
+ %% Number of edges in a neighbourhood 
+% This function computes the number of edges linking any two nodes in |neighbours|. 
+ 
+function [n] = number_of_edges_within_neighbourhood(graph,neighbours)
+  n = 0;
+  for index = 1:size(neighbours,1)
+       neighbour = neighbours{index,1};
+       [~,outgoing_nodes] = outedges(graph,neighbour);
+       % Derives the number of nodes that are both in |neighbours| and outgoing nodes of |neighbour|.
+       n = n+size(intersect(neighbours,outgoing_nodes),1);
+  end
+end
+
+ %% Local clustering coefficient 
+% This function computes the local clustering coefficient of |vertex|.
+% The local clustering coefficient identifies how connected is the
+% neighbourhood of |vertex|. The formula to compute is the following:
+%
+% $$number\_of\_edges\_within\_neighbourhood / (n*(n-1))$$
+% n denotes the number of vertices in the gicen neighbourhood. 
+ 
+function lcc = local_clustering_coefficient(graph,vertex)
+    vertex_neighbours = neighbourhood(graph,vertex);
+    number_of_neighbours = size(vertex_neighbours,1);
+    if size(vertex_neighbours,1) > 1
+        lcc = number_of_edges_within_neighbourhood(graph,vertex_neighbours)./(number_of_neighbours * (number_of_neighbours -1));  
+    else
+        lcc =0;
+    end
+end
+
+%%
+% 
+% <<lcc.jpg>>
+% 
+ %% Local clustering coefficient for all nodes.
+% Calculates local clustering coefficient values for all vertices. 
+ 
+function lccs = compute_lccs(g)
+  nodes = g.Nodes;
+  lccs = zeros(size(nodes,1),1); % initialises an array storing LCC values.
+  for i = 1:size(nodes,1)
+      % |nodes(i,:).Name| extracts the name as a string of the given node.
+      lccs(i) = local_clustering_coefficient(g,nodes(i,:).Name);
+  end
+end
+
+ %% Main function
+% Plots the graph in several figures.
+ 
+function main()
+   [s,t] = adjacency("test_graph.txt");
+   % Creates a directed graph from the adjacency list. 
+   g = digraph(s,t);
+   % The first figure displays the graph with nodes highlighted in blue. 
+   plot(g,'EdgeColor','k','NodeColor','#4DBEEE','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
+   title('Randomly generated graph (27 edges and 20 nodes)')
+   % The second figure displays the graph with nodes highlighted related to
+   % relatively to their in-degree values.
+   plot(g,'NodeCData',indegree(g),'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
+   title('Same graph with nodes coloured by in degree')
+   colorbar;
+   % The third figure displays the graph with nodes highlighted related to
+   % relatively to their out-degree values.
+   plot(g,'NodeCData',outdegree(g),'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
+   title('Same graph with nodes coloured by out degree')
+   colorbar;
+   % The fourth figure displays the graph with nodes highlighted related to
+   % relatively to their LCC values. 
+   lccs = compute_lccs(g);
+   plot(g,'NodeCData',lccs,'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75);
+   title('Same graph with nodes coloured by local clustering coefficient')
+   colorbar;
+   % The fifth figure displays the graph with initial seed nodes highlighted
+   % in red, influenced nodes (excluding initial seed nodes) in green abd
+   % other nodes in blue.
+   H = plot(g,'EdgeColor','k','MarkerSize',7,'LineStyle','-','LineWidth',0.75,'NodeColor','#4DBEEE');
+   title('Same graph with influential nodes and influenced nodes')
+   in = extract_nodes("influential_nodes.txt");
+   is = extract_nodes('influenced_nodes.txt');
+   highlight(H,in,'NodeColor','r','MarkerSize',7);
+   highlight(H,is,'NodeColor','g','MarkerSize',7);
+end 
+
+%%
+% 
+% <<in_degree.jpg>>
+% 
+ 
+%%
+% 
+% <<out_degree.jpg>>
+% 
+ 
+
+
+
+
+  
+
+##### SOURCE END #####
+--></body></html>
