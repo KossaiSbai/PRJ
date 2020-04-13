@@ -38,8 +38,8 @@ The main method of graph.py does the following:
 
 When open for the first time, graph.py will execute the previous steps for a randomly generated graph G stored in test_graph.txt. 
 
-After the Python code is run, the three previously mentioned txt files contents should get copied in the matlab folder corresponding files:
-so for instance the file "influential_nodes.txt" storing the seed nodes should be copied in the matlab folder.  
+After the Python code is run, the three previously mentioned txt files contents should get copied in the matlab folder corresponding files.
+Hence, for instance, the file "influential_nodes.txt" storing the seed nodes should be copied in the matlab folder.  
 
 Subsequently the Matlab code will display the various figures for a given graph data.
 
