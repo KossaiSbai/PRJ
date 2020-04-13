@@ -1,7 +1,7 @@
 import csv
-from src.linear_threshold import LinearThresholdModel
-from src.independent_cascade import IndependentCascadeModel
-from src.graph import Graph
+from python.linear_threshold import LinearThresholdModel
+from python.independent_cascade import IndependentCascadeModel
+from python.graph import Graph
 import time
 from typing import List,Any
 

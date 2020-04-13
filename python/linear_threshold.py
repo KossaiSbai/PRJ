@@ -1,6 +1,6 @@
 import copy
 from typing import List,Tuple,Dict
-from src.graph import Graph
+from python.graph import Graph
 
 
 class LinearThresholdModel:

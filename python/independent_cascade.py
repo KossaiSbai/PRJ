@@ -1,7 +1,7 @@
 import copy
 import random
 from typing import List,Tuple,Set
-from src.graph import Graph
+from python.graph import Graph
 
 
 class IndependentCascadeModel:

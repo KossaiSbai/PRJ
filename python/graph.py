@@ -691,8 +691,8 @@ def write_nodes_to_txt_file(path: str, nodes: List[str]) -> None:
 
 
 if __name__ == "__main__":
-    import src.linear_threshold as lt
-    import src.independent_cascade as ic
+    import python.linear_threshold as lt
+    import python.independent_cascade as ic
     g = Graph("../test_graph.txt")
     seeds = g.get_influential_nodes(g.out_degree)
     print(seeds)
