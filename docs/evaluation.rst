@@ -1,5 +1,5 @@
 Evaluation module
-*****************
+-----------------
 
 .. automodule:: python.evaluation
    :members:
