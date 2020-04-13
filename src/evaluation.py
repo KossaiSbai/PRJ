@@ -78,10 +78,10 @@ def run_spreading_nodes_test(dataset_graph: Graph, k: int, n: int, methods_compa
         size of subgraph
 
     n :  int
-        Number of iterations of the test.
+        number of iterations of the test.
 
     methods_compared :  int
-        Number of methods that are compared
+        number of methods that are compared.
 
     Returns
     -------
@@ -115,10 +115,10 @@ def compute_spreading_influence_values(dataset_graph: Graph, nodes_set_1: List[s
         graph on which the test is carried out.
 
     nodes_set_1 :  List[str]
-        first set of nodes (influential nodes in our case)
+        first set of nodes (influential nodes in our case).
 
     nodes_set_2 :  List[str]
-        second set of nodes (random nodes, in-degree nodes etc)
+        second set of nodes (random nodes, in-degree nodes etc).
 
     spreading_model : Any
         spreading model used: either IC or LT.
@@ -151,7 +151,7 @@ def write_results_to_csv_file(path: str, i: int, j: int, data: Any) -> None:
         index of the row of the csv file to write to.
 
     j :  int
-        index of the cell within the row of the csv fikle to write to.
+        index of the cell within the row of the csv file to write to.
 
     data : Any
         data to write in the csv file.

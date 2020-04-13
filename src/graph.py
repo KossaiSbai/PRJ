@@ -5,6 +5,7 @@ import random
 import src.linear_threshold as lt
 from typing import List,Callable,Tuple,Dict
 
+
 class Graph:
 
     """Conceptual class representing a graph data structure
@@ -12,10 +13,10 @@ class Graph:
     Parameters
     ----------
     path : str, optional
-        Path of the txt file. Defaults to "".
+        path of the txt file. Defaults to "".
 
     al : dict, optional
-        Adjacency list. Defaults to None.
+        adjacency list. Defaults to None.
     """
 
     def __init__(self, path="", al=None):
@@ -39,7 +40,7 @@ class Graph:
         Returns
         -------
         List[Tuple[str,str]]
-            A list of tuples where each tuple (`a`, `b`) is an edge between `a` and `b`.
+            list of tuples where each tuple (`a`, `b`) is an edge between `a` and `b`.
         """
 
         self.edges = []
@@ -54,7 +55,7 @@ class Graph:
         Returns
         -------
         List[str]
-            A list of strings where each string `v`, is a node `v` of the graph.
+            list of strings where each string `v`, is a node `v` of the graph.
         """
 
         return list(self.adjacency_list.keys())
@@ -65,7 +66,7 @@ class Graph:
         Returns
         -------
         Dict[str,List[str]]
-            A dictionary which entries (`v`, `e`) associate each node `v` to its outgoing nodes `e`.
+            dictionary which entries (`v`, `e`) associate each node `v` to its outgoing nodes `e`.
         """
 
         return self.adjacency_list
@@ -76,12 +77,12 @@ class Graph:
         Parameters
         ----------
         lines :  List[str]
-            List of strings (`a`, `b`) denoting an edge between `a` and `b`.
+            list of strings (`a`, `b`) denoting an edge between `a` and `b`.
 
         Returns
         -------
         Dict[str,List[str]]
-            The adjacency list of `self`.
+            the adjacency list of `self`.
         """
         for x in lines:
             # Splits the line by whitespace and gets the two nodes of the edge.
@@ -107,7 +108,7 @@ class Graph:
         Parameters
         ----------
         path : str
-            Path of the tgf file.
+            path of the tgf file.
         """
         # split() gets rid of tab characters.
         line_list = [' '.join(line.split()) for line in open(path, "r")]
@@ -124,7 +125,7 @@ class Graph:
         Parameters
         ----------
         path : str
-            Path of the txt file.
+            path of the txt file.
         """
         line_list = [' '.join(line.split()) for line in open(path, "r")]
         self.adjacency_list = self.build_adjacency_list(line_list)
@@ -136,12 +137,12 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the in-degree is calculated.
+            vertex for which the in-degree is calculated.
 
         Returns
         -------
         int
-            The in-degree of the vertex.
+            the in-degree of the vertex.
         """
         in_neighbours = [node for node in self.nodes if vertex in self.adjacency_list[node]]
         return len(in_neighbours)
@@ -152,12 +153,12 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the out-degree is calculated.
+            vertex for which the out-degree is calculated.
 
         Returns
         -------
         int
-            The out-degree of the vertex.
+            the out-degree of the vertex.
         """
         return len(self.adjacency_list[vertex])
 
@@ -168,15 +169,15 @@ class Graph:
         Parameters
         ----------
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         vertices : List[str]
-            List of nodes.
+            list of nodes.
 
         Returns
         -------
         List[Tuple[str,int]]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
         degrees_tuples = [(vertex, degree_method(vertex)) for vertex in vertices]
         return degrees_tuples
@@ -187,15 +188,15 @@ class Graph:
         Parameters
         ----------
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         vertices : List[str]
-            List of nodes.
+            list of nodes.
 
         Returns
         -------
         List[Tuple[str,int]]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
         degrees_tuples = self.compute_degrees(degree_method, vertices)
         # Sorts the list of tuples by degree (second element of the tuple) in reverse order, that is decreasing order.
@@ -208,28 +209,28 @@ class Graph:
         Parameters
         ----------
         vertices : List[str]
-            List of nodes.
+            list of nodes.
 
         Returns
         -------
         List[Tuple[str,int]]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
         return self.compute_degrees(self.in_degree, vertices)
 
-    def sort_vertices_by_in_degree(self, vertices: List[str]) -> List[Tuple[str,int]]:
+    def sort_vertices_by_in_degree(self, vertices: List[str]) -> List[Tuple[str, int]]:
 
         """ Sorts the nodes by in-degree value.
 
         Parameters
         ----------
         vertices : List[str]
-            List of nodes.
+            list of nodes.
 
         Returns
         -------
         List[Tuple[str,int]]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its in-degree value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its in-degree value.
         """
         return self.sort_vertices_by_degree(self.in_degree, vertices)
 
@@ -239,27 +240,27 @@ class Graph:
         Parameters
         ----------
         vertices : List[str]
-            List of nodes.
+            list of nodes.
 
         Returns
         -------
         List[Tuple[str,int]]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
         return self.compute_degrees(self.out_degree, vertices)
 
-    def sort_vertices_by_out_degree(self, vertices: List[str]) -> List[Tuple[str,int]]:
+    def sort_vertices_by_out_degree(self, vertices: List[str]) -> List[Tuple[str, int]]:
         """ Sorts the nodes by out-degree value.
 
         Parameters
         ----------
         vertices : List[str]
-            List of nodes.
+            list of nodes.
 
         Returns
         -------
         List[Tuple[str,int]]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its out-degree value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its out-degree value.
         """
         return self.sort_vertices_by_degree(self.out_degree, vertices)
 
@@ -269,15 +270,15 @@ class Graph:
         Parameters
         ----------
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         k : int
-           Number of vertices to be selected.
+           number of vertices to be selected.
 
         Returns
         -------
          List[str]
-            List of selected vertices.
+            list of selected vertices.
         """
         degrees_sorted = self.sort_vertices_by_degree(degree_method, self.nodes)
         return [degree_tuple[0] for degree_tuple in degrees_sorted][0:k]
@@ -288,12 +289,12 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex which neighbourhood is determined.
+            vertex which neighbourhood is determined.
 
         Returns
         -------
         List[str]
-            A list of nodes corresponding to the neighbourhood of `vertex`.
+            list of nodes corresponding to the neighbourhood of `vertex`.
         """
         nodes = self.adjacency_list.keys()
         neighbours = [node for node in nodes if node in self.adjacency_list[vertex] or vertex in self.adjacency_list[node]]
@@ -305,12 +306,12 @@ class Graph:
         Parameters
         ----------
         neighbourhood : List[str]
-            List of neighbours.
+            list of neighbours.
 
         Returns
         -------
         int
-            Number of edges within neighbourhood.
+            number of edges within neighbourhood.
         """
         neighbourhood_edges = 0
         for neighbour in neighbourhood:
@@ -324,7 +325,7 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the local clustering coefficient is computed.
+            vertex for which the local clustering coefficient is computed.
 
         Returns
         -------
@@ -342,10 +343,10 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the  node level centrality is computed.
+            vertex for which the  node level centrality is computed.
         
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.    
+            degree metric used: in-degree or out-degree.
 
         Returns
         -------
@@ -354,7 +355,7 @@ class Graph:
         """
         neighbours = self.neighbourhood(vertex)
         neighbours.append(vertex)
-        degrees = self.sort_vertices_by_degree(degree_method,neighbours)
+        degrees = self.sort_vertices_by_degree(degree_method, neighbours)
         # Gets the biggest degree value in the neighbourhood.
         # This corresponds to the second element (degree value) of the first tuple of the sorted list since it is sorted in decreasing order.
         most_connections = degrees[0][1]
@@ -367,12 +368,12 @@ class Graph:
         Parameters
         ----------
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.   
+            degree metric used: in-degree or out-degree.
 
         Returns
         -------
         int
-            Biggest degree value in the given graph.
+            biggest degree value in the given graph.
         """
         biggest_degree_value = self.sort_vertices_by_degree(degree_method, self.get_vertices())[0][1]
         return biggest_degree_value
@@ -383,10 +384,10 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the  degree centrality is computed.
+            vertex for which the  degree centrality is computed.
 
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         Returns
         -------
@@ -405,17 +406,17 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the enhanced degree centrality is computed.
+            vertex for which the enhanced degree centrality is computed.
 
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         Returns
         -------
         float
             `EDC(vertex)`
         """
-        degree_centrality = self.degree_centrality(degree_method,vertex)
+        degree_centrality = self.degree_centrality(degree_method, vertex)
         lcc = self.local_clustering_coefficient(vertex)
         self.degree_centralities[vertex] = float(degree_centrality)
         return abs(degree_centrality*lcc)
@@ -426,12 +427,12 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the successors are derived.
+            vertex for which the successors are derived.
 
         Returns
         -------
         List[str]
-            List of successors of `vertex`.
+            list of successors of `vertex`.
         """
         successors = self.adjacency_list[vertex]
         return successors
@@ -442,22 +443,22 @@ class Graph:
         Parameters
         ----------
         vertex : str
-            Vertex for which the predecessors are derived.
+            vertex for which the predecessors are derived.
 
         vertices : List[str]
-            Vertices of the original graph.
+            vertices of the original graph.
 
 
         Returns
         -------
         List[str]
-            List of predecessors of `vertex`.
+            list of predecessors of `vertex`.
         """
         predecessors = [v for v in vertices if vertex in self.adjacency_list[v]]
         return predecessors
 
     @staticmethod
-    def average_enhanced_degree_centrality(edcs: List[Tuple[str,float]]) -> float:
+    def average_enhanced_degree_centrality(edcs: List[Tuple[str, float]]) -> float:
         """ Calculates the average enhanced degree centrality over `edcs`.
 
         Parameters
@@ -468,7 +469,7 @@ class Graph:
         Returns
         -------
         float
-            Average EDC. 
+            average EDC.
         """
         return sum([x[1] for x in edcs])/float(len(edcs))
 
@@ -480,18 +481,18 @@ class Graph:
         Parameters
         ----------
         advanced_metric : Callable[[Callable[[str], int],str],float]
-            Advanced degree metric used: EDC or DC for instance.
+            advanced degree metric used: EDC or DC for instance.
 
         basic_metric : Callable[[str], int]
-            Basic degree metric used: in-degree or out-degree.
+            basic degree metric used: in-degree or out-degree.
 
         vertices : List[str]
-            Vertices of the graph
+            vertices of the graph.
 
         Returns
         -------
         List[Tuple[str,float]]
-              A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its degree value.
         """
         # The advanced metric takes the basic metric as parameter.
         # For instance, EDC takes out-degree or in-degree as parameter.
@@ -499,39 +500,39 @@ class Graph:
         degrees_sorted = sorted(degrees_tuples, key=itemgetter(1), reverse=True)
         return degrees_sorted
 
-    def sort_nodes_by_edc(self, degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str,float]]:
+    def sort_nodes_by_edc(self, degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str, float]]:
         """ Sorts the nodes by EDC value.
 
         Parameters
         ----------
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         vertices : List[str]
-            Vertices of the graph
+            vertices of the graph.
 
         Returns
         -------
         List[Tuple[str,float]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its EDC value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its EDC value.
         """
         return self.sort_by_advanced_degree_centrality_metric(self.enhanced_degree_centrality, degree_method, vertices)
 
-    def sort_nodes_by_degree_centrality(self,degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str,float]]:
+    def sort_nodes_by_degree_centrality(self,degree_method: Callable[[str], int], vertices: List[str]) -> List[Tuple[str, float]]:
         """Sorts the nodes by DC value.
 
         Parameters
         ----------
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         vertices : List[str]
-            Vertices of the graph
+            vertices of the graph.
 
         Returns
         -------
         List[Tuple[str,float]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its DC value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its DC value.
         """
         return self.sort_by_advanced_degree_centrality_metric(self.degree_centrality, degree_method, vertices)
 
@@ -541,16 +542,16 @@ class Graph:
         Parameters
         ----------
         nodes_tuples : List[Tuple[str,float]]
-            A list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its EDC value.
+            list of tuples (`v`, `d`) where `v` is a given vertex and `d` is its EDC value.
 
         threshold : float
-            Threshold for filtering out nodes.
+            threshold for filtering out nodes.
             If the degree centrality of a node `v` is below that threshold, then `v` is filtered out.
 
         Returns
         -------
         List[str]
-            List of filtered nodes.
+            list of filtered nodes.
         """
         final_nodes = [x[0] for x in nodes_tuples if self.degree_centralities[x[0]] >= threshold]
         print(final_nodes)
@@ -563,12 +564,12 @@ class Graph:
         Parameters
         ----------
         nodes_list : List[str]
-            List of nodes.
+            list of nodes.
 
         Returns
         -------
         List[str]
-            Top quarter of `nodes_list`
+            top quarter of `nodes_list`.
         """
         quarter = math.ceil(len(nodes_list)/4)
         return nodes_list[0:quarter]
@@ -579,19 +580,19 @@ class Graph:
         Parameters
         ----------
         degree_method : Callable[[str], int]
-            Degree metric used: in-degree or out-degree.
+            degree metric used: in-degree or out-degree.
 
         Returns
         -------
         List[str]
-            List of influential nodes.
+            list of influential nodes.
         """
         graph_nodes = self.nodes
         if self.most_connected_node_degree_value is None:
             self.most_connected_node_degree_value = self.compute_biggest_degree_value(degree_method)
-        edcs = self.sort_nodes_by_edc(degree_method,graph_nodes)
+        edcs = self.sort_nodes_by_edc(degree_method, graph_nodes)
         average_edc = self.average_enhanced_degree_centrality(edcs)
-        fn = self.filter_out_nodes_edc_threshold(edcs,average_edc)
+        fn = self.filter_out_nodes_edc_threshold(edcs, average_edc)
         return self.active_nodes(fn)
 
     def select_random_nodes(self, k: int) -> List[str]:
@@ -600,15 +601,15 @@ class Graph:
         Parameters
         ----------
         k : int
-            Number of nodes to be selected.
+            number of nodes to be selected.
 
         Returns
         -------
         List[str]
-            List of randomly selected nodes.
+            list of randomly selected nodes.
         """
         vertices = self.get_vertices()
-        selected_nodes = random.sample(vertices,k=k)
+        selected_nodes = random.sample(vertices, k=k)
         return selected_nodes
 
     def get_adjacency_list_of_subgraph(self, nodes: List[str]) -> Dict[str, List[str]]:
@@ -617,12 +618,12 @@ class Graph:
         Parameters
         ----------
         nodes : str
-            Nodes constituting the subgraph.
+            nodes constituting the subgraph.
 
         Returns
         -------
         Dict[str, List[str]]
-            The adjacency list
+            the adjacency list
         """
         new_al = {}
         for node in nodes:
@@ -636,10 +637,10 @@ class Graph:
         Parameters
         ----------
         number_of_nodes : int
-            Number of nodes in the subgraph.
+            number of nodes in the subgraph.
 
         degree_method_string : str
-            String encoding the degree metric used: in-degree or our-degree.
+            string encoding the degree metric used: in-degree or our-degree.
 
         Returns
         -------
@@ -659,7 +660,7 @@ def return_file_type(filename: str) -> str:
     Parameters
     ----------
     filename : str
-        Name of the file.
+        name of the file.
 
     Returns
     -------
@@ -678,10 +679,10 @@ def write_nodes_to_txt_file(path: str, nodes: List[str]) -> None:
     Parameters
     ----------
     path : str
-        Name of the txt file to write to.
+        name of the txt file to write to.
 
     nodes : List[str]
-        List of nodes to be put in the txt file.
+        list of nodes to be put in the txt file.
     """
     # Reads the given file in write mode.
     with open(path, 'w') as output_file:

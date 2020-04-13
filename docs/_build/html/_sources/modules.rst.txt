@@ -1,10 +1,10 @@
-src
-===
+Documentation
+=============
 
 .. toctree::
    :maxdepth: 4
 
-   evaluation
    graph
+   evaluation
    independent_cascade
    linear_threshold

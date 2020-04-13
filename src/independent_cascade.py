@@ -13,7 +13,7 @@ class IndependentCascadeModel:
            graph on which IC is performed.
 
        seeds : List[str]
-            list of seed nodes
+            list of seed nodes.
 
        act_prob : float
             probability of a node being influenced.
@@ -39,7 +39,7 @@ class IndependentCascadeModel:
         Returns
         -------
         int
-            number of influenced nodes
+            number of influenced nodes.
         """
         return self.total_number_of_nodes
 
@@ -61,7 +61,7 @@ class IndependentCascadeModel:
         random_number = round(random.random(), 1)
         return random_number <= act_prob
 
-    def diffuse_one_round(self, g: Graph, seed_nodes: List[str], tried_edges: List[str], act_prob: float) -> Tuple[List[str],List[str],Set[Tuple[str,str]]]:
+    def diffuse_one_round(self, g: Graph, seed_nodes: List[str], tried_edges: Set[Tuple[str, str]], act_prob: float) -> Tuple[List[str],List[str],Set[Tuple[str,str]]]:
         """ Executes the diffusion process for one round.
 
         Parameters
@@ -76,12 +76,12 @@ class IndependentCascadeModel:
             list of edges that have been visited so far.
 
         act_prob : float
-             activation probability
+             activation probability.
 
         Returns
         -------
         Tuple[List[str],List[str],Set[Tuple[str,str]]]
-            The list of the new seed nodes, the list of the nodes that got influenced at the given round and the list of edges that got visited at the given round .
+            the list of the new seed nodes, the list of the nodes that got influenced at the given round and the list of edges that got visited at the given round .
         """
         activated_nodes_of_this_round = set()
         tried_edges_of_this_round = set()
@@ -112,12 +112,12 @@ class IndependentCascadeModel:
             list of seed nodes.
 
         act_prob : float
-            activation probability
+            activation probability.
 
         Returns
         -------
         Tuple[List[List[str]], int]
-            List of lists of influenced nodes as well as the total number of influenced nodes.
+            list of lists of influenced nodes as well as the total number of influenced nodes.
         """
         tried_edges = set()
         # Each sublist at index i stores the nodes influenced at round i.
@@ -152,7 +152,7 @@ class IndependentCascadeModel:
         Returns
         -------
         Tuple[List[List[str]], int]
-            List of lists of influenced nodes as well as the total number of influenced nodes.
+            list of lists of influenced nodes as well as the total number of influenced nodes.
         """
         for s in seeds:
             if s not in g.get_vertices():

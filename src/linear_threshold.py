@@ -36,7 +36,7 @@ class LinearThresholdModel:
         Returns
         -------
         int
-            number of influenced nodes
+            number of influenced nodes.
         """
         return self.total_number_of_nodes
 
@@ -47,15 +47,15 @@ class LinearThresholdModel:
         Parameters
         ----------
         froms :  List[str]
-            list of seed nodes
+            list of seed nodes.
 
         influences :  Dict[str,float]
-            A dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
+            dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
 
         Returns
         -------
         float
-            The total sum of the influences of the seed nodes.
+            the total sum of the influences of the seed nodes.
         """
         influence_sum = sum([influences[f] for f in froms])
         return influence_sum
@@ -72,10 +72,10 @@ class LinearThresholdModel:
             list of seed nodes.
 
         influences : Dict[str, float]
-            A dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
+            dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
 
         thresholds : Dict[str, float]
-             A dictionary which entries (`v`, `t`) associate each node `v` to its threshold value `t`.
+             dictionary which entries (`v`, `t`) associate each node `v` to its threshold value `t`.
 
         Returns
         -------
@@ -109,15 +109,15 @@ class LinearThresholdModel:
             list of seed nodes.
 
         influences : Dict[str, float]
-            A dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
+            a dictionary which entries (`v`, `i`) associate each node `v` to its influence value `e`.
 
         thresholds : Dict[str, float]
-            A dictionary which entries (`v`, `t`) associate each node `v` to its threshold value `t`.
+            a dictionary which entries (`v`, `t`) associate each node `v` to its threshold value `t`.
 
         Returns
         -------
         Tuple[List[List[str]], int]
-            List of lists of influenced nodes as well as the total number of influenced nodes.
+            list of lists of influenced nodes as well as the total number of influenced nodes.
         """
         # Each sublist at index i stores the nodes influenced at round i.
         # So initially, at round 0, the seed nodes are the only influenced nodes.
@@ -146,7 +146,7 @@ class LinearThresholdModel:
         Returns
         -------
         Tuple[List[List[str]], int]
-            List of lists of influenced nodes as well as the total number of influenced nodes.
+            list of lists of influenced nodes as well as the total number of influenced nodes.
         """
         influences = {}
         thresholds = {}

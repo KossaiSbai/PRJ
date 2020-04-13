@@ -1,140 +1,312 @@
 
-<!DOCTYPE html>
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>evaluation module &#8212; PRJ  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Evaluation module &mdash; PRJ  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Independent Cascade module" href="independent_cascade.html" />
+    <link rel="prev" title="Graph module" href="graph.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> PRJ
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="graph.html">Graph module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Evaluation module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="independent_cascade.html">Independent Cascade module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_threshold.html">Linear Threshold module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PRJ</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">Documentation</a> &raquo;</li>
+        
+      <li>Evaluation module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/evaluation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="module-src.evaluation">
-<span id="evaluation-module"></span><h1>evaluation module<a class="headerlink" href="#module-src.evaluation" title="Permalink to this headline">¶</a></h1>
+<span id="evaluation-module"></span><h1>Evaluation module<a class="headerlink" href="#module-src.evaluation" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt id="src.evaluation.compute_average_csv_file">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">compute_average_csv_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.compute_average_csv_file" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="src.evaluation.compute_average_spreading">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">compute_average_spreading</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.compute_average_spreading" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="src.evaluation.compute_average_time">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">compute_average_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.compute_average_time" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="src.evaluation.compute_spreading_influence_values">
+<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">compute_spreading_influence_values</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">nodes_set_1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">nodes_set_2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">spreading_model</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="reference internal" href="_modules/src/evaluation.html#compute_spreading_influence_values"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.compute_spreading_influence_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the total number of influenced nodes after diffusion by a given spreading model. Two sets of nodes <cite>nodes_set_1</cite> and <cite>nodes_set_2</cite> are used as seed nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>nodes_set_1</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – first set of nodes (influential nodes in our case)</p></li>
+<li><p><strong>nodes_set_2</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – second set of nodes (random nodes, in-degree nodes etc)</p></li>
+<li><p><strong>spreading_model</strong> (<em>Any</em>) – spreading model used: either IC or LT.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of average spreading influence values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt id="src.evaluation.run_influential_nodes_test">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_influential_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.run_influential_nodes_test" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_influential_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/evaluation.html#run_influential_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.run_influential_nodes_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the average number of influential nodes returned by the IM algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – size of subgraph</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – number of iterations of the test.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>average running time.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt id="src.evaluation.run_spreading_nodes_test">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">n</span></em>, <em class="sig-param"><span class="n">models_compared</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.run_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="src.evaluation.run_spreading_test">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_spreading_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph</span></em>, <em class="sig-param"><span class="n">nodes_set_1</span></em>, <em class="sig-param"><span class="n">nodes_set_2</span></em>, <em class="sig-param"><span class="n">spreading_model</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.run_spreading_test" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">methods_compared</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>float<span class="p">]</span><a class="reference internal" href="_modules/src/evaluation.html#run_spreading_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.run_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the average number of influenced nodes using two methods (influential vs random for example) after diffusion by a given spreading model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – size of subgraph</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – Number of iterations of the test.</p></li>
+<li><p><strong>methods_compared</strong> (<em>int</em>) – Number of methods that are compared</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of average spreading influence values.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt id="src.evaluation.run_time_spreading_nodes_test">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_time_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span></em>, <em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.run_time_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">run_time_spreading_nodes_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataset_graph</span><span class="p">:</span> <span class="n"><a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph">src.graph.Graph</a></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/src/evaluation.html#run_time_spreading_nodes_test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.run_time_spreading_nodes_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the average time taken by the IM algorithm to compute the influential nodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_graph</strong> (<a class="reference internal" href="graph.html#src.graph.Graph" title="src.graph.Graph"><em>Graph</em></a>) – graph on which the test is carried out.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – size of subgraph.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – number of iterations of the test.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>average running time.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt id="src.evaluation.write_results_to_csv_file">
-<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">write_results_to_csv_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em>, <em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.evaluation.write_results_to_csv_file" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</div>
-
-
-          </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">PRJ</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
+<code class="sig-prename descclassname">src.evaluation.</code><code class="sig-name descname">write_results_to_csv_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">i</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">j</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">data</span><span class="p">:</span> <span class="n">Any</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/src/evaluation.html#write_results_to_csv_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.evaluation.write_results_to_csv_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes <cite>data</cite> in the given csv file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em>) – path of the csv file.</p></li>
+<li><p><strong>i</strong> (<em>int</em>) – index of the row of the csv file to write to.</p></li>
+<li><p><strong>j</strong> (<em>int</em>) – index of the cell within the row of the csv fikle to write to.</p></li>
+<li><p><strong>data</strong> (<em>Any</em>) – data to write in the csv file.</p></li>
 </ul>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="independent_cascade.html" class="btn btn-neutral float-right" title="Independent Cascade module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="graph.html" class="btn btn-neutral float-left" title="Graph module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
-</div>
-<script>$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Kossaï Sbaï
 
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2020, Kossaï Sbaï.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/evaluation.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>
