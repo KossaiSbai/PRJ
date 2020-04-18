@@ -3,6 +3,9 @@ import random
 from typing import List,Tuple,Set
 from python.graph import Graph
 
+# The below reference is a python implementation of the IC model. It is reused for the implementation of this class.
+# Hung-Hsuan Chen (19 nov 2016) independent_cascade.py source code [Source code]. https://github.com/hhchen1105/networkx_addon/blob/master/information_propagation/independent_cascade.py
+
 
 class IndependentCascadeModel:
     """Independent Cascade model class

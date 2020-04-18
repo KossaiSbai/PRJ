@@ -2,6 +2,8 @@ import copy
 from typing import List,Tuple,Dict
 from python.graph import Graph
 
+# The below reference is a python implementation of the LT model. It is reused for the implementation of this class.
+# Hung-Hsuan Chen (19 nov 2016) linear_threshold.py source code [Source code]. https://github.com/hhchen1105/networkx_addon/blob/master/information_propagation/linear_threshold.py
 
 class LinearThresholdModel:
     """Linear Threshold model class
