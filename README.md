@@ -36,13 +36,12 @@ The main method of graph.py does the following:
 5. The latter returns a list of influenced nodes.
 6. Those are written to a txt file called "influenced_nodes.txt".
 
-When open for the first time, graph.py will execute the previous steps for a randomly generated graph G stored in test_graph.txt. 
+The classic procedure of use of the system is the following:
+1. Run graph.py providing a txt/tgf input file path *p* of the user's choice. 
+2. The latter will execute the previous list of steps.
+3. The three obtained txt files namely "influenced_nodes.txt", "influential_nodes.txt" as well as the input file used for the Python step, should get copied in the matlab folder. 
+4. Execute PRJ.m on input file used for the Python step.
+5. The latter will display the various figures for the given graph data.
 
-After the Python code is run, the three previously mentioned txt files contents should get copied in the matlab folder corresponding files.
-Hence, for instance, the file "influential_nodes.txt" storing the seed nodes should be copied in the matlab folder.  
 
-Subsequently the Matlab code will display the various figures for a given graph data.
-
-When open for the first time, PRJ.m executes on G as well.
-
-The code will run on any graph stored as a txt or tgf file. 
+For both Matlab and Python parts of the application, the user can view their results of execution on a default graph G stored in a file called "test_graph.txt". 
