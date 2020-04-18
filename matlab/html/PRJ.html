@@ -68,19 +68,19 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
   </style></head><body><div class="content"><h1>PRJ</h1><!--introduction--><p>Documentation of the Matlab code of the project.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">Extract influential nodes</a></li><li><a href="#4">Adjacency list.</a></li><li><a href="#6">Neighbourhood of a node.</a></li><li><a href="#7">Number of edges in a neighbourhood</a></li><li><a href="#8">Local clustering coefficient</a></li><li><a href="#10">Local clustering coefficient for all nodes.</a></li><li><a href="#11">Main function</a></li></ul></div>
-<h2 id="2">Extract influential nodes</h2><p>This function reads a txt file and stores the influential nodes in <tt>i_nodes</tt>.</p><pre class="codeinput">  <span class="keyword">function</span> i_nodes = extract_nodes(file_path)
+<h2 id="2">Extract nodes</h2><p>This function reads a txt file and stores the nodes in <tt>i_nodes</tt>.</p><pre class="codeinput">  <span class="keyword">function</span> nodes = extract_nodes(file_path)
    fid = fopen(file_path); <span class="comment">% opens the file.</span>
    tline = fgetl(fid);
-   i_nodes = cell(1); <span class="comment">% cell array storing the nodes.</span>
+   nodes = cell(1); <span class="comment">% cell array storing the nodes.</span>
    i = 1;
    <span class="keyword">while</span> ischar(tline)
        tline = tline(~isspace(tline)); <span class="comment">% gets rid of whitespace.</span>
-       i_nodes{1,i} = tline;
+       nodes{1,i} = tline;
        tline = fgetl(fid);
        i = i+1;
    <span class="keyword">end</span>
   <span class="keyword">end</span>
-</pre></p><h2 id="4">Adjacency list.</h2><p>This function builds the adjacency list of a graph by reading the txt file.</p><pre class="codeinput"><span class="keyword">function</span> [s,t] = adjacency(file_path)
+</pre><p><img vspace="5" hspace="5" src="spe.jpg" alt=""> </p><h2 id="4">Adjacency list.</h2><p>This function builds the adjacency list of a graph by reading the txt file.</p><pre class="codeinput"><span class="keyword">function</span> [s,t] = adjacency(file_path)
     fid = fopen(file_path);
     tline = fgetl(fid);
     i = 1;
@@ -168,7 +168,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
    highlight(H,in,<span class="string">'NodeColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerSize'</span>,7);
    highlight(H,is,<span class="string">'NodeColor'</span>,<span class="string">'g'</span>,<span class="string">'MarkerSize'</span>,7);
 <span class="keyword">end</span>
-</pre><p><img vspace="5" hspace="5" src="in_degree.jpg" alt=""> </p><p><img vspace="5" hspace="5" src="out_degree.jpg" alt=""> </p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
+</pre><p><img vspace="5" hspace="5" src="in_degree.jpg" alt=""> <img vspace="5" hspace="5" src="out_degree.jpg" alt=""> </p><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2020a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% PRJ
 % Documentation of the Matlab code of the project. 
@@ -179,14 +179,14 @@ main();
 % |i_nodes|.
   
 
-  function i_nodes = extract_nodes(file_path)
+  function nodes = extract_nodes(file_path)
    fid = fopen(file_path); % opens the file. 
    tline = fgetl(fid); 
-   i_nodes = cell(1); % cell array storing the nodes. 
+   nodes = cell(1); % cell array storing the nodes.
    i = 1;
    while ischar(tline)
        tline = tline(~isspace(tline)); % gets rid of whitespace. 
-       i_nodes{1,i} = tline;
+       nodes{1,i} = tline;
        tline = fgetl(fid);
        i = i+1;
    end
