@@ -23,9 +23,10 @@ Both Python and Matlab documentations are hosted on Read the Docs and built usin
 
 ## Run the project 
 In order to run the source code for this project, please carry out the following instructions: 
-1. Clone the contents of this repository in an editor of your choice.
-2. The Python part can be executed by running graph.py and evaluation.py.
-3. Regarding the Matlab part, open the file PRJ/matlab/PRJ.m and execute it via a Matlab editor such as [MATLAB_R2020a](https://www.mathworks.com/products/new_products/latest_features.html). 
+1. Clone the contents of this repository.
+2. Open the obtained folder in an editor of your choice, preferably [Pycharm](https://www.jetbrains.com/pycharm/).  
+2. The Python part can be executed by running graph.py and evaluation.py in any Python editor, such as Pycharm. Those two files can be found in the *python* folder.
+3. Regarding the Matlab part, open the file ./matlab/PRJ.m and execute it via a Matlab editor such as [MATLAB_R2020a](https://www.mathworks.com/products/new_products/latest_features.html). 
 
 
 The main method of graph.py does the following:
