@@ -28,6 +28,7 @@ def run_time_spreading_nodes_test(dataset_graph: Graph, k: int, n: int) -> float
     total_elapsed = 0
     for i in range(n):
         print("Iteration", i)
+        # Extracts a subgraph using out-degree.
         sub = dataset_graph.build_subgraph(k, "o")
         start = time.time()
         influential_nodes = sub.get_influential_nodes(sub.out_degree)
@@ -59,6 +60,7 @@ def run_influential_nodes_test(dataset_graph: Graph, k: int, n: int) -> float:
     cumulated_number_of_influential_nodes = 0
     for i in range(n):
         print("Iteration", i)
+        # Extracts a subgraph using in-degree.
         sub = dataset_graph.build_subgraph(k, "i")
         influential_nodes = sub.get_influential_nodes(sub.in_degree)
         cumulated_number_of_influential_nodes += len(influential_nodes)
@@ -133,7 +135,7 @@ def compute_spreading_influence_values(dataset_graph: Graph, nodes_set_1: List[s
     sm2 = spreading_model(dataset_graph, nodes_set_2, 0.2)
     n1 = sm1.get_total_number_of_influenced_nodes()
     print(n1)
-    print("Other nodes spreading")
+    print("Other seed nodes spreading")
     n2 = sm2.get_total_number_of_influenced_nodes()
     print(n2)
     return [n1,n2]
