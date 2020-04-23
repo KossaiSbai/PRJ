@@ -31,13 +31,13 @@ In order to run the source code for this project, please carry out the following
 The main method of graph.py does the following:
 1. Reads a given file and creates a graph out of it.
 2. Computes the most influential nodes of the graph by executing the IM algorithm.
-3. Stores the returned nodes in a txt file called "influential_nodes.txt".
+3. Generates a txt file called "influential_nodes.txt" which stores the returned nodes.
 4. Carries out the diffusion process using a specific model such as Linear Threshold (LT).
 5. The latter returns a list of influenced nodes.
-6. Those are written to a txt file called "influenced_nodes.txt".
+6. Generates a txt file called "influenced_nodes.txt". The influenced nodes computed at the previous step are written to "influenced_nodes.txt". 
 
 The classic procedure of use of the system is the following:
-1. Run graph.py providing a txt/tgf input file path *p* of the user's choice. 
+1. Run graph.py providing a txt/tgf input file path *p* of the user's choice. Make sure that the input file is in the *python* folder.  
 2. The latter will execute the previous list of steps.
 3. The three obtained txt files namely "influenced_nodes.txt", "influential_nodes.txt" as well as the input file used for the Python step, should get copied in the matlab folder. 
 4. Execute PRJ.m on input file used for the Python step.
