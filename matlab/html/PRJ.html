@@ -80,7 +80,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
        i = i+1;
    <span class="keyword">end</span>
   <span class="keyword">end</span>
-</pre><p><img vspace="5" hspace="5" src="spe.jpg" alt=""> </p><h2 id="4">Adjacency list.</h2><p>This function builds the adjacency list of a graph by reading the txt file.</p><pre class="codeinput"><span class="keyword">function</span> [s,t] = adjacency(file_path)
+</pre><p><img vspace="5" hspace="5" src="initial_graph.jpg" alt=""></p><h2 id="4">Adjacency list.</h2><p>This function builds the adjacency list of a graph by reading the txt file.</p><pre class="codeinput"><span class="keyword">function</span> [s,t] = adjacency(file_path)
     fid = fopen(file_path);
     tline = fgetl(fid);
     i = 1;
@@ -99,7 +99,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
     s = s(~cellfun(@isempty, s));
     t = t(~cellfun(@isempty, t));
 <span class="keyword">end</span>
-</pre><p><img vspace="5" hspace="5" src="initial_graph.jpg" alt=""> </p><h2 id="6">Neighbourhood of a node.</h2><p>This function derives the neighbourhood of a node. This corresponds to all the nodes nodes connected to <tt>node</tt> by either an outgoing or incoming edge.</p><pre class="codeinput"><span class="keyword">function</span> [neighbours] = neighbourhood(graph,node)
+</pre><p><img vspace="5" hspace="5" src="spe.jpg" alt=""></p><h2 id="6">Neighbourhood of a node.</h2><p>This function derives the neighbourhood of a node. This corresponds to all the nodes nodes connected to <tt>node</tt> by either an outgoing or incoming edge.</p><pre class="codeinput"><span class="keyword">function</span> [neighbours] = neighbourhood(graph,node)
     incoming_neighbours = predecessors(graph,node);
     outgoing_neighbours = successors(graph,node);
     <span class="comment">% Union of incoming and outgoing neighbours.</span>
