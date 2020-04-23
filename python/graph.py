@@ -697,16 +697,16 @@ def write_nodes_to_txt_file(path: str, nodes: List[str]) -> None:
 if __name__ == "__main__":
     import python.linear_threshold as lt
     import python.independent_cascade as ic
-    g = Graph("../test_graph.txt")
+    g = Graph("test_graph.txt")
     seeds = g.get_influential_nodes(g.out_degree)
     print(seeds)
-    write_nodes_to_txt_file("../influential_nodes.txt",seeds)
+    write_nodes_to_txt_file("influential_nodes.txt",seeds)
     ic_influenced_nodes = ic.IndependentCascadeModel(g, seeds, 0.2).get_influenced_nodes()
     lt_influenced_nodes = lt.LinearThresholdModel(g, seeds).get_influenced_nodes()
     influenced_nodes = ic_influenced_nodes[1:len(ic_influenced_nodes)]
     # Flattens the influenced_nodes list: converts it from a 2D list to a 1D list.
     influenced_nodes = list(itertools.chain(*influenced_nodes))
-    write_nodes_to_txt_file("../influenced_nodes.txt", influenced_nodes)
+    write_nodes_to_txt_file("influenced_nodes.txt", influenced_nodes)
     print(ic_influenced_nodes)
     print(lt_influenced_nodes)
 
